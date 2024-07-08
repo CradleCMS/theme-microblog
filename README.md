@@ -2,7 +2,7 @@
 
 Designed for web articles written in markdown
 
-With support for 
+With support for: 
 * Sidenotes
 * Footnotes
 * Table of contents
