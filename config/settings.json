@@ -46,10 +46,35 @@
           "type": "header"
         },
         {
+          "key": "ok-t-hl",
+          "caption": "Highlight text (--ok-t-hl)",
+          "type": "color"
+        },
+        {
           "key": "ok-tc-0",
-          "caption": "Text color",
+          "caption": "Text color (--ok-tc-0)",
           "type": "color",
           "description": "Used for text"
+        },
+        {
+          "key": "ok-tc-1",
+          "caption": "Text color (--ok-tc-1)",
+          "type": "color"
+        },
+        {
+          "key": "ok-tc-2",
+          "caption": "Text color (--ok-tc-2)",
+          "type": "color"
+        },
+        {
+          "key": "ok-tc-accent",
+          "caption": "Accent text color (--ok-tc-accent)",
+          "type": "color"
+        },
+        {
+          "key": "ok-tc-code",
+          "caption": "Code color (--ok-tc-code)",
+          "type": "color"
         }
       ]
     },
