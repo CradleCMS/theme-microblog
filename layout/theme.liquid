@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
+        </title>	
+        {% if metaDescription %}
+        <meta name="description" content="{{ metaDescription | escape }}" />
+        {% endif %}
+        {% if metaKeywords %}
+        <meta name="keywords" content="{{ metaKeywords | escape }}" />
+        {% endif %}
+        <link rel="canonical" href="{{ canonicalUrl }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% if settings.favicon_enable %}
+            <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_img_url:'16','16' }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon.png' | asset_img_url:'32','32' }}">
+            <link rel="icon" href="{{ 'icon.svg' | asset_img_url }}" type="image/svg+xml">
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+            <link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
+        {% endif %}
+        <link rel="stylesheet" href="{{ 'ok.css' | asset_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'site.css.liquid' | asset_url }}">
+        {{ settings.head_extra_code }}
+    </head>
+    <body id="{{ meta.title | handle }}" class="template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
+        <header>
+            <h1 id="title">{{ site.name }}</h1>
+            {% include 'navbar' %}
+        </header>
+        <main>
+            {% include 'breadcrumbs' %}
+            {{ contentForLayout }}
+        </main>
+        <footer>
+            {% unless settings.footer_about_shop == ""%}
+            <p>
+                <mark>{{ settings.footer_about_shop }}</mark>
+            </p> 
+            {% endunless %}
+            {% if settings.footer_quicklinks_enable %}
+            {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
+              <nav>
+                <ul>
+                {% for link in navigation[linkList.id].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}                   
+                </ul>
+              </nav> 
+            {% endfor %}
+            {% endif %}
+            <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
+        </footer>
+        {% if template == 'article' %}
+            {{ 'toc.js' | asset_url | script_tag }}
+        {% endif %}
+    </body>
+</html>

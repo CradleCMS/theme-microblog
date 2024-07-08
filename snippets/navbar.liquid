@@ -1,0 +1,19 @@
+{% assign main-nav = settings.main_nav %}
+<nav>
+  <ul tabindex="0">
+    {% for link in navigation[main-nav].links %}
+        {% if link.type == 'navigation' %}
+         <li>
+            <p>{{ link.title }}</p>
+            <ul>
+                {% for childlink in navigation[link.handle].links %}
+                    <li><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>           
+        {% else %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endif %}
+    {% endfor %}
+  </ul>
+</nav>   

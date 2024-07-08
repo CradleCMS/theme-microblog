@@ -1,0 +1,23 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "css_framework": "OK",
+      "footer_about_shop": "This is a blog! Written for the web!",
+      "footer_linklists": [
+        {
+          "footer_linklist": {
+            "id": "175f9377-5e33-4b2b-b204-d4891d015849",
+            "navigation": "footer"
+          },
+          "id": 0
+        }
+      ],
+      "footer_quicklinks_enable": true,
+      "main_nav": {
+        "id": "17dd79a8-6342-874f-82ab-c9a0db14e124",
+        "navigation": "microblog"
+      }
+    }
+  }
+}

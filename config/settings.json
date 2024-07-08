@@ -1,0 +1,138 @@
+{
+  "name": "theme-template",
+  "description": "Template for Cradle theme",
+  "version": "0.1.0",
+  "sections": [
+    {
+      "key": "global_settings",
+      "caption": "Global settings",
+      "type": "section",
+      "settings": [
+        {
+          "key": "favicon",
+          "caption": "Favicon",
+          "type": "header"
+        },
+        {
+          "key": "favicon_enable",
+          "caption": "Enable custom favicon",
+          "type": "checkbox",
+          "default": false
+        },
+        {
+          "key": "favicon_image",
+          "caption": "Favicon",
+          "type": "asset",
+          "filename": "favicon.png",
+          "max-width": 32,
+          "max-height": 32,
+          "description": "32px x 32px png"
+        },
+        {
+          "key": "head_extra_code",
+          "caption": "Extra code for the head",
+          "type": "textarea"
+        }
+      ]
+    },
+    {
+      "key": "colors",
+      "caption": "Colors",
+      "type": "section",
+      "settings": [
+        {
+          "key": "general_colors",
+          "caption": "Colors (Light mode)",
+          "type": "header"
+        },
+        {
+          "key": "ok-tc-0",
+          "caption": "Text color",
+          "type": "color",
+          "description": "Used for text"
+        }
+      ]
+    },
+    {
+      "key": "header",
+      "caption": "Header",
+      "type": "section",
+      "settings": [
+        {
+          "key": "main_nav",
+          "caption": "Main nav linklist",
+          "type": "linklist"
+        }
+      ]
+    },
+    {
+      "key": "homepage",
+      "caption": "Homepage",
+      "type": "section",
+      "settings": [
+        {
+          "key": "homepage_news",
+          "caption": "banners to show on the homepage",
+          "type": "header"
+        },
+        {
+          "key": "homepage_banners",
+          "type": "struct",
+          "struct": [
+            {
+              "key": "homepage_banners_url",
+              "caption": "URL",
+              "type": "text"
+            },
+            {
+              "key": "homepage_banners_image",
+              "caption": "Select a banner image",
+              "type": "asset",
+              "filename": "homepage_banner.png",
+              "max-width": 1200,
+              "max-height": 1200,
+              "description": "Recommend the optimal width and height for your image here."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "footer",
+      "caption": "Footer",
+      "type": "section",
+      "settings": [
+        {
+          "key": "footer_about_shop",
+          "caption": "About us text",
+          "type": "textarea"
+        },
+        {
+          "key": "quick_links",
+          "caption": "Quick links",
+          "type": "header"
+        },
+        {
+          "key": "footer_quicklinks_enable",
+          "caption": "Show links",
+          "type": "checkbox",
+          "default": true
+        },
+        {
+          "key": "footer_linklists",
+          "caption": "Select link lists",
+          "description": "Create link-lists under Navigation",
+          "type": "struct",
+          "settings": [
+            {
+              "key": "footer_linklist",
+              "caption": "Link list",
+              "type": "linklist",
+              "default": "footer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

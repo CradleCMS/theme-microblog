@@ -1,0 +1,69 @@
+<nav id="toc"></nav>
+<article>
+    <header>
+        <h1>{{ meta.h1 }}</h1>
+        <p>
+            {% if article.author %}{{ article.author }}<br>{% endif article.author %}<time itemprop="dateModified">{{ article.updatedAt | date }}</time> 
+    	</p>    
+    </header>
+    {{ article.excerpt }}
+    <hr>
+    <div id="content">{{ article.html }}</div>
+	{% if blog %}
+        <button {% if article.previousUrl == blank %}disabled=""{% endif %}>
+            {% unless article.previousUrl == blank %}
+            <a href="{{ article.previousUrl }}">&larr; {{ lang.older_post | def:'Previous'}}</a>
+            {% else %}
+            <p>&larr; {{ lang.older_post | def:'Previous'}}</p>
+    	    {% endunless %}
+        </button>
+    	<button {% if article.nextUrl == blank %}disabled=""{% endif %}>
+    	    {% unless article.nextUrl == blank %}
+    	    <a href="{{ article.nextUrl }}">{{ lang.newer_post | def:'Next'}} &rarr;</a>
+    	    {% else %}
+    	    <p>{{ lang.newer_post | def:'Next'}} &rarr;</p>
+    	    {% endunless %}
+    	</button>
+    {% endif %}
+</article>
+<style>
+#content aside {
+    padding-left: var(--ok-s-5);
+    color: var(--ok-tc-1);
+}
+
+@media (width >= 160ch) {
+    #content aside {
+        padding: var(--ok-s-3);
+        position: absolute;
+        margin-left: 78ch;
+        max-width: 38ch;
+    }
+    
+    #toc {
+        padding: var(--ok-s-3);
+        position: fixed;
+        margin-left: -25ch;
+        max-width: 25ch;
+    }
+}
+
+
+#content .footnotes ol {
+    padding-left: var(--ok-s-5);
+    color: var(--ok-tc-1);     
+    font-family: monospace;
+}
+
+.sidenav ul {
+    margin-bottom: var(--ok-s-3);    
+}
+
+.sidenav ul ul {
+    padding-left: var(--ok-s-3);
+}
+
+.sidenav ul ul ul {
+    padding-left: var(--ok-s-3);
+}
+</style>

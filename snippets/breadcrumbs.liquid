@@ -1,0 +1,53 @@
+{% unless template == 'index' or template == 'cart' %}
+    <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <ul>
+        <li><a href="/">{{ lang.home | def:'Home'}}</a></li>
+        {% if template contains 'product' %}
+            {% if collection %}
+                <li><a href="collection.url">{{ collection.title }}</a></li>
+            {% endif %}
+        {% elseif template contains 'collection' and template != 'collections-list' %}
+            {% unless currentTags.size > 0  or currentVendor.size > 0 or currentType.size > 0 %}
+                <li><span>{{ collection.title }}</span></li>
+            {% else %}
+                <li><a href="collection.url">{{ collection.title }}</a></li>
+            {% endunless %}
+        {% elseif template == 'blog' %}
+            {% if currentTags.size > 0 %}
+                <li><a href="/{{ blog.url }}">{{ blog.title }}</a></li>
+                <li><span>{{ currentTags | join: " + " }}</span></li>
+            {% else %}
+                <li><span>{{ blog.title }}</span></li>
+            {% endif %}
+        {% elseif template == 'article' %}
+            {% if blog %}
+            <li><a href="/{{ blog.url }}">{{ blog.title }}</a></li>
+            {% endif %}
+            <li><span>{{ article.title }}</span></li>
+        {% elseif template contains 'page' %}
+            <li><span>{{ page.title }}</span></li>
+        {% elseif template contains 'customers' %}
+            {% if template contains 'account' %}
+                <li><span>{{ lang.my_account | def:'My Account' }}</span></li>
+            {% endif %}
+        {% else %}
+            <li><span>{{ meta_title }}</span></li>
+        {% endif %}
+        </ul>
+    </nav>
+{% endunless %}
+
+<style>
+    .breadcrumbs {
+        font-size: var(--ok-fs-5);
+    }
+    .breadcrumbs li {
+        margin-right:0;
+    }
+    .breadcrumbs li::after {  
+        content: " >";
+    }
+    .breadcrumbs li:last-child::after {
+        content: "";
+    }
+</style>

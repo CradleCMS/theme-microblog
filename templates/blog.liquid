@@ -1,0 +1,23 @@
+<section>
+    <h1>{{ meta.h1 }}</h1>
+    <div>{{ blog.html }}</div>
+</section>
+<section class="article-list">
+    {{ currentTags | print_r }}
+    {{ blog | print_r }}
+<dl>
+    {% for article in blog.articles %}
+            <dt><h4><a href="{{ article | url }}">{{ article.title }}</a></h4></dt>
+            <dd>
+                <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
+                <br>
+            {% if article.excerpt.size > 0 %}
+    		    {{ article.excerpt | strip_html }}
+    		{% else %}
+    			{{ article.html | strip_html | truncatewords: 20 }}
+    		{% endif %}	
+                <a href="{{ article | url }}">Read more</a>
+            </dd>
+	{% endfor %}
+</dl>
+</section>
