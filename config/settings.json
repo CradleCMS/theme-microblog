@@ -42,13 +42,28 @@
       "settings": [
         {
           "key": "general_colors",
-          "caption": "Colors (Light mode)",
+          "caption": "General colors",
           "type": "header"
         },
         {
           "key": "ok-t-hl",
           "caption": "Highlight text (--ok-t-hl)",
           "type": "color"
+        },
+        {
+          "key": "ok-accent-0",
+          "caption": "Accent (--ok-accent-0)",
+          "type": "color"
+        },
+        {
+          "key": "ok-accent-1",
+          "caption": "Accent (--ok-accent-1)",
+          "type": "color"
+        },
+        {
+          "key": "light_mode",
+          "caption": "Light mode",
+          "type": "header"
         },
         {
           "key": "ok-tc-0",
@@ -73,6 +88,37 @@
         },
         {
           "key": "ok-tc-code",
+          "caption": "Code color (--ok-tc-code)",
+          "type": "color"
+        },
+        {
+          "key": "dark_mode",
+          "caption": "Light mode",
+          "type": "header"
+        },
+        {
+          "key": "d-ok-tc-0",
+          "caption": "Text color (--ok-tc-0)",
+          "type": "color",
+          "description": "Used for text"
+        },
+        {
+          "key": "d-ok-tc-1",
+          "caption": "Text color (--ok-tc-1)",
+          "type": "color"
+        },
+        {
+          "key": "d-ok-tc-2",
+          "caption": "Text color (--ok-tc-2)",
+          "type": "color"
+        },
+        {
+          "key": "d-ok-tc-accent",
+          "caption": "Accent text color (--ok-tc-accent)",
+          "type": "color"
+        },
+        {
+          "key": "d-ok-tc-code",
           "caption": "Code color (--ok-tc-code)",
           "type": "color"
         }
