@@ -3,8 +3,6 @@
     <div>{{ blog.html }}</div>
 </section>
 <section class="article-list">
-    {{ currentTags | print_r }}
-    {{ blog | print_r }}
 <dl>
     {% for article in blog.articles %}
             <dt><h4><a href="{{ article | url }}">{{ article.title }}</a></h4></dt>
