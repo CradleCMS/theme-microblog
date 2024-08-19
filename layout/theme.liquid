@@ -12,6 +12,7 @@
         <meta name="keywords" content="{{ metaKeywords | escape }}" />
         {% endif %}
         <link rel="canonical" href="{{ canonicalUrl }}" />
+        {% include 'open-graph-tags' %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {% if settings.favicon_enable %}
             <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
