@@ -93,7 +93,7 @@
         },
         {
           "key": "dark_mode",
-          "caption": "Light mode",
+          "caption": "Dark mode",
           "type": "header"
         },
         {
