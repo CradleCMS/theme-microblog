@@ -18,3 +18,5 @@ Minimal CSS approach where Ok.css framework used with minor additions in a separ
 * Blogs list
 * 404 page
 
+## Features
+* Open graph tags
