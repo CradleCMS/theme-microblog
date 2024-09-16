@@ -7,6 +7,11 @@
       "closed_fgimage_size":"150",
       "closed_text":"We are closed for the moment, check in later!",
       "closed_title":"We are closed",
+      "d-ok-tc-0": "##fff",
+      "d-ok-tc-1": "#ababab",
+      "d-ok-tc-2": "#929292",
+      "d-ok-tc-accent": "#5c9aff",
+      "d-ok-tc-code": "#ed5853",      
       "footer_about_shop": "This is a blog! Written for the web!",
       "footer_linklists": [
         {
@@ -18,6 +23,14 @@
         }
       ],
       "footer_quicklinks_enable": true,
+      "ok-accent-0": "#3e67fa",
+      "ok-accent-1": "#4788ff",
+      "ok-t-hl": "#ffcf30",
+      "ok-tc-0": "##000",
+      "ok-tc-1": "#747474",
+      "ok-tc-2": "#848484",
+      "ok-tc-accent": "#3173de",
+      "ok-tc-code": "#c23a30"
     }
   }
 }
