@@ -134,6 +134,17 @@
           "caption": "Main nav linklist",
           "key": "main_nav",
           "type": "linklist"
+        },
+        {
+          "caption": "Header style",
+          "key": "header_tategaki_header",
+          "type": "header"
+        },
+        {
+          "caption": "Use Tategaki style",
+          "key": "header_tategaki",
+          "description": "Will place the header to the right in vertical right to left writing mode.",
+          "type": "checkbox"
         }
       ]
     },
