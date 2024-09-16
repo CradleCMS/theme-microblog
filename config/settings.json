@@ -150,33 +150,24 @@
     },
     {
       "key": "homepage",
-      "type": "section",
       "caption": "Homepage",
+      "type": "section",
       "settings": [
         {
-          "caption": "banners to show on the homepage",
-          "key": "homepage_news",
+          "key": "hmoepage_page_header",
+          "caption": "Page content",
           "type": "header"
         },
         {
-          "key": "homepage_banners",
-          "struct": [
-            {
-              "caption": "URL",
-              "key": "homepage_banners_url",
-              "type": "text"
-            },
-            {
-              "caption": "Select a banner image",
-              "description": "Recommend the optimal width and height for your image here.",
-              "filename": "homepage_banner.png",
-              "key": "homepage_banners_image",
-              "max-height": 1200,
-              "max-width": 1200,
-              "type": "asset"
-            }
-          ],
-          "type": "struct"
+          "caption": "Page",
+          "default": "Select page",
+          "key": "homepage_page",
+          "type": "page"
+        },
+        {
+          "caption": "Show page",
+          "key": "homepage_page_show",
+          "type": "checkbox"
         }
       ]
     },
