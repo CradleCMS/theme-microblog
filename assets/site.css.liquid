@@ -20,8 +20,33 @@ main {
 }
 
 #title {
-    font-size: var(--ok-fs-2);
+    font-size: var(--ok-fs-1);
 }
+
+/* Tategaki header */
+
+.tategaki-header {
+    display: flex;
+    flex-direction: row-reverse;    
+    margin-top: var(--ok-s-4);
+}
+
+.tategaki-header header {
+    writing-mode: vertical-rl;
+    margin-left: var(--ok-s-4);
+}
+
+.tategaki-header h1 {
+    margin-top:0;
+    margin-left: var(--ok-s-2);
+}
+
+.tategaki-header li {
+    margin-top: 0;
+    margin-bottom: var(--ok-s-3);
+}
+
+/* Articles */
 
 #content aside {
     padding-left: var(--ok-s-5);
