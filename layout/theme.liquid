@@ -27,14 +27,16 @@
         {{ settings.head_extra_code }}
     </head>
     <body id="{{ meta.title | handle }}" class="template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
-        <header>
-            <h1 id="title">{{ site.name }}</h1>
-            {% include 'navbar' %}
-        </header>
-        <main>
-            {% include 'breadcrumbs' %}
-            {{ contentForLayout }}
-        </main>
+        <div {% if settings.header_tategaki %}class="tategaki-header"{% endif %}>
+            <header>
+                <h1 id="title">{{ site.name }}</h1>
+                {% include 'navbar' %}
+            </header>
+            <main>
+                {% include 'breadcrumbs' %}
+                {{ contentForLayout }}
+            </main>
+        </div>
         <footer>
             {% unless settings.footer_about_shop == ""%}
             <p>
