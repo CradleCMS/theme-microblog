@@ -17,6 +17,12 @@ Minimal CSS approach where Ok.css framework used with minor additions in a separ
   * Table of contents
 * Blogs list
 * 404 page
+* Closed site template with signup form.
 
 ## Features
-* Open graph tags
+* Open graph tags.
+* Tategaki style header optiom.
+* Table of contents on article template.
+* Styled asides in articles written in Markdown.
+* Styled fotnotes created with Markdown.
+
