@@ -2,7 +2,11 @@
   "current": "Default",
   "presets": {
     "Default": {
-      "css_framework": "OK",
+      "closed_button_link":"/",
+      "closed_button_text":"A link",
+      "closed_fgimage_size":"150",
+      "closed_text":"We are closed for the moment, check in later!",
+      "closed_title":"We are closed",
       "footer_about_shop": "This is a blog! Written for the web!",
       "footer_linklists": [
         {
@@ -14,10 +18,6 @@
         }
       ],
       "footer_quicklinks_enable": true,
-      "main_nav": {
-        "id": "17dd79a8-6342-874f-82ab-c9a0db14e124",
-        "navigation": "microblog"
-      }
     }
   }
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html id="restricted">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
+        </title>	
+        {% if metaDescription %}
+        <meta name="description" content="{{ metaDescription | escape }}" />
+        {% endif %}
+        {% if metaKeywords %}
+        <meta name="keywords" content="{{ metaKeywords | escape }}" />
+        {% endif %}
+        <link rel="canonical" href="{{ canonicalUrl }}" />
+        {% include 'open-graph-tags' %}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% if settings.favicon_enable %}
+            <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_img_url:'16','16' }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon.png' | asset_img_url:'32','32' }}">
+            <link rel="icon" href="{{ 'icon.svg' | asset_img_url }}" type="image/svg+xml">
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+            <link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
+        {% endif %}
+        <link rel="stylesheet" href="{{ 'ok.css' | asset_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'site.css.liquid' | asset_url }}">
+    </head>
+    <body id="{{ meta.title | handle }}">
+        <main>
+            <div class="message">
+                  {% if settings.closed_fgimage_use %}
+                    <img src="{{ 'closed-fg.png' | asset_img_url: settings.closed_fgimage_size,'0' }}">
+                  {% endif %}
+                  {% if settings.closed_title %}
+                    <h1>{{ settings.closed_title }}</h1>
+                  {% endif %}
+                  {% if settings.closed_text %}
+                    <p>{{ settings.closed_text }}</p>
+                  {% endif %}
+                  {% if settings.closed_button_link and settings.closed_button_text %}
+                    <a href="{{ settings.closed_button_link }}">{{ settings.closed_button_text }}</a>
+                  {% endif %}
+                  {% if settings.closed_signup_true %}
+                    <h5 class="">{{ settings.closed_signup_text }}</h5>
+                    {% form 'signup' %}{% endform %}  
+                  {% endif %}
+            </div>
+        </main>
+    </body>
+</html>

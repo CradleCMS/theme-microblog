@@ -67,3 +67,31 @@ main {
 .article-list dd {
     padding-left: var(--ok-s-0);
 }
+
+/* Closed site */
+
+#restricted main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#restricted .message {
+    padding: var(--ok-s-6);
+    background-color:var(--ok-bg-0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#restricted form {
+    display: flex;
+    flex-direction: column;    
+}
+
+{% if settings.closed_bgimage_use %}
+html#restricted {
+    background-image: url("{{ 'closed-bg.jpg' | asset_img_url:'1024','0' }}");
+    background-size: cover;
+}
+{% endif %}

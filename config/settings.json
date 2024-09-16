@@ -1,207 +1,314 @@
 {
-  "name": "theme-template",
-  "description": "Template for Cradle theme",
-  "version": "0.1.0",
+  "name": "Microblog",
+  "version": "0.1.1",
+  "developer": "Cradle Systems",
+  "description": "Microblog Cradle theme",
   "sections": [
     {
       "key": "global_settings",
-      "caption": "Global settings",
       "type": "section",
+      "caption": "Global settings",
       "settings": [
         {
-          "key": "favicon",
           "caption": "Favicon",
+          "key": "favicon",
           "type": "header"
         },
         {
-          "key": "favicon_enable",
           "caption": "Enable custom favicon",
-          "type": "checkbox",
-          "default": false
+          "default": false,
+          "key": "favicon_enable",
+          "type": "checkbox"
         },
         {
-          "key": "favicon_image",
           "caption": "Favicon",
-          "type": "asset",
+          "description": "32px x 32px png",
           "filename": "favicon.png",
-          "max-width": 32,
+          "key": "favicon_image",
           "max-height": 32,
-          "description": "32px x 32px png"
+          "max-width": 32,
+          "type": "asset"
         },
         {
-          "key": "head_extra_code",
           "caption": "Extra code for the head",
+          "key": "head_extra_code",
           "type": "textarea"
         }
       ]
     },
     {
       "key": "colors",
-      "caption": "Colors",
       "type": "section",
+      "caption": "Colors",
       "settings": [
         {
-          "key": "general_colors",
           "caption": "General colors",
+          "key": "general_colors",
           "type": "header"
         },
         {
-          "key": "ok-t-hl",
           "caption": "Highlight text (--ok-t-hl)",
+          "key": "ok-t-hl",
           "type": "color"
         },
         {
-          "key": "ok-accent-0",
           "caption": "Accent (--ok-accent-0)",
+          "key": "ok-accent-0",
           "type": "color"
         },
         {
-          "key": "ok-accent-1",
           "caption": "Accent (--ok-accent-1)",
+          "key": "ok-accent-1",
           "type": "color"
         },
         {
-          "key": "light_mode",
           "caption": "Light mode",
+          "key": "light_mode",
           "type": "header"
         },
         {
+          "caption": "Text color (--ok-tc-0)",
+          "description": "Used for text",
           "key": "ok-tc-0",
-          "caption": "Text color (--ok-tc-0)",
-          "type": "color",
-          "description": "Used for text"
+          "type": "color"
         },
         {
-          "key": "ok-tc-1",
           "caption": "Text color (--ok-tc-1)",
+          "key": "ok-tc-1",
           "type": "color"
         },
         {
-          "key": "ok-tc-2",
           "caption": "Text color (--ok-tc-2)",
+          "key": "ok-tc-2",
           "type": "color"
         },
         {
-          "key": "ok-tc-accent",
           "caption": "Accent text color (--ok-tc-accent)",
+          "key": "ok-tc-accent",
           "type": "color"
         },
         {
-          "key": "ok-tc-code",
           "caption": "Code color (--ok-tc-code)",
+          "key": "ok-tc-code",
           "type": "color"
         },
         {
-          "key": "dark_mode",
           "caption": "Dark mode",
+          "key": "dark_mode",
           "type": "header"
         },
         {
-          "key": "d-ok-tc-0",
           "caption": "Text color (--ok-tc-0)",
-          "type": "color",
-          "description": "Used for text"
+          "description": "Used for text",
+          "key": "d-ok-tc-0",
+          "type": "color"
         },
         {
-          "key": "d-ok-tc-1",
           "caption": "Text color (--ok-tc-1)",
+          "key": "d-ok-tc-1",
           "type": "color"
         },
         {
-          "key": "d-ok-tc-2",
           "caption": "Text color (--ok-tc-2)",
+          "key": "d-ok-tc-2",
           "type": "color"
         },
         {
-          "key": "d-ok-tc-accent",
           "caption": "Accent text color (--ok-tc-accent)",
+          "key": "d-ok-tc-accent",
           "type": "color"
         },
         {
-          "key": "d-ok-tc-code",
           "caption": "Code color (--ok-tc-code)",
+          "key": "d-ok-tc-code",
           "type": "color"
         }
       ]
     },
     {
       "key": "header",
-      "caption": "Header",
       "type": "section",
+      "caption": "Header",
       "settings": [
         {
-          "key": "main_nav",
           "caption": "Main nav linklist",
+          "key": "main_nav",
           "type": "linklist"
         }
       ]
     },
     {
       "key": "homepage",
-      "caption": "Homepage",
       "type": "section",
+      "caption": "Homepage",
       "settings": [
         {
-          "key": "homepage_news",
           "caption": "banners to show on the homepage",
+          "key": "homepage_news",
           "type": "header"
         },
         {
           "key": "homepage_banners",
-          "type": "struct",
           "struct": [
             {
-              "key": "homepage_banners_url",
               "caption": "URL",
+              "key": "homepage_banners_url",
               "type": "text"
             },
             {
-              "key": "homepage_banners_image",
               "caption": "Select a banner image",
-              "type": "asset",
+              "description": "Recommend the optimal width and height for your image here.",
               "filename": "homepage_banner.png",
-              "max-width": 1200,
+              "key": "homepage_banners_image",
               "max-height": 1200,
-              "description": "Recommend the optimal width and height for your image here."
+              "max-width": 1200,
+              "type": "asset"
             }
-          ]
+          ],
+          "type": "struct"
         }
       ]
     },
     {
       "key": "footer",
-      "caption": "Footer",
       "type": "section",
+      "caption": "Footer",
       "settings": [
         {
-          "key": "footer_about_shop",
           "caption": "About us text",
+          "key": "footer_about_shop",
           "type": "textarea"
         },
         {
-          "key": "quick_links",
           "caption": "Quick links",
+          "key": "quick_links",
           "type": "header"
         },
         {
-          "key": "footer_quicklinks_enable",
           "caption": "Show links",
-          "type": "checkbox",
-          "default": true
+          "default": true,
+          "key": "footer_quicklinks_enable",
+          "type": "checkbox"
         },
         {
-          "key": "footer_linklists",
           "caption": "Select link lists",
           "description": "Create link-lists under Navigation",
-          "type": "struct",
+          "key": "footer_linklists",
           "settings": [
             {
-              "key": "footer_linklist",
               "caption": "Link list",
-              "type": "linklist",
-              "default": "footer"
+              "default": "footer",
+              "key": "footer_linklist",
+              "type": "linklist"
             }
-          ]
+          ],
+          "type": "struct"
+        }
+      ]
+    },
+    {
+      "key": "closed",
+      "type": "section",
+      "caption": "Closed site",
+      "settings": [
+        {
+          "caption": "Background image",
+          "key": "closed_header_bg_image",
+          "type": "header"
+        },
+        {
+          "caption": "Use image for background",
+          "key": "closed_bgimage_use",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Background image",
+          "description": "Format: jpg-file, minimum 1024px x 1024p",
+          "filename": "closed-bg.jpg",
+          "key": "closed_bgimage",
+          "type": "asset"
+        },
+        {
+          "caption": "Message",
+          "key": "closed_header_text",
+          "type": "header"
+        },
+        {
+          "caption": "Title",
+          "key": "closed_title",
+          "type": "text"
+        },
+        {
+          "caption": "Text",
+          "key": "closed_text",
+          "type": "text"
+        },
+        {
+          "caption": "Image",
+          "key": "closed_header_fg_image_header",
+          "type": "header"
+        },
+        {
+          "caption": "Show image",
+          "key": "closed_fgimage_use",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Size",
+          "key": "closed_fgimage_size",
+          "options": [
+            {
+              "caption": "Small, 150px",
+              "value": "150"
+            },
+            {
+              "caption": "Medium, 300px",
+              "value": "300"
+            },
+            {
+              "caption": "Maximum, 500px",
+              "value": "500"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Upload image",
+          "description": "Format: png-file, 500px wide",
+          "filename": "closed-fg.png",
+          "key": "closed_fgimage",
+          "type": "asset"
+        },
+        {
+          "caption": "Signup",
+          "key": "closed_header_signup",
+          "type": "header"
+        },
+        {
+          "caption": "Message",
+          "key": "closed_signup_text",
+          "type": "text"
+        },
+        {
+          "caption": "Display signup form",
+          "description": "NOTE you need to create a form named signup in admin.",
+          "key": "closed_signup_true",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Button",
+          "key": "closed_header_button",
+          "type": "header"
+        },
+        {
+          "caption": "Button text",
+          "key": "closed_button_text",
+          "type": "text"
+        },
+        {
+          "caption": "Add link",
+          "key": "closed_button_link",
+          "type": "text"
         }
       ]
     }
