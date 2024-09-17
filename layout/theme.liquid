@@ -43,9 +43,11 @@
                 <mark>{{ settings.footer_about_shop }}</mark>
             </p> 
             {% endunless %}
-            <nav>
-                {% include 'socialmedia-icon-links' %}
-            </nav>
+            {% if settings.social_show_links %}
+                <nav>
+                    {% include 'socialmedia-icon-links' %}
+                </nav>
+            {% endif %}
             {% if settings.footer_quicklinks_enable %}
             {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
               <nav>
