@@ -44,6 +44,12 @@
                     <h5 class="">{{ settings.closed_signup_text }}</h5>
                     {% form 'signup' %}{% endform %}  
                   {% endif %}
+                {% if settings.social_show_links %}
+                    <h4>Connect on social</h4>
+                    <nav>
+                        {% include 'socialmedia-icon-links' %}
+                    </nav>
+                {% endif %}
             </div>
         </main>
     </body>
