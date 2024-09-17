@@ -326,6 +326,11 @@
           "type": "header"
         },
         {
+          "caption": "Show links",
+          "key": "social_show_links",
+          "type": "checkbox"
+        },
+        {
           "caption": "Facebook URL",
           "key": "social_facebook_url",
           "type": "text"
