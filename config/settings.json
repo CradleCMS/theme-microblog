@@ -1,6 +1,6 @@
 {
   "name": "Microblog",
-  "version": "0.2.3",
+  "version": "0.3.3",
   "developer": "Cradle Systems",
   "description": "Microblog Cradle theme",
   "sections": [
@@ -310,6 +310,44 @@
         {
           "caption": "Add link",
           "key": "closed_button_link",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "social_media",
+      "type": "section",
+      "caption": "Social Media Links",
+      "settings": [
+        {
+          "caption": "Social links",
+          "description": "All links must begin with <i>http://</i> or <i>https://</i>",
+          "key": "social_links",
+          "type": "header"
+        },
+        {
+          "caption": "Facebook URL",
+          "key": "social_facebook_url",
+          "type": "text"
+        },
+        {
+          "caption": "Instagram URL",
+          "key": "social_instagram_url",
+          "type": "text"
+        },
+        {
+          "caption": "Twitter URL",
+          "key": "social_twitter_url",
+          "type": "text"
+        },
+        {
+          "caption": "YouTube URL",
+          "key": "social_youtube_url",
+          "type": "text"
+        },
+        {
+          "caption": "LinkedIn URL",
+          "key": "social_linkedin_url",
           "type": "text"
         }
       ]
