@@ -28,10 +28,11 @@
     </head>
     <body id="{{ meta.title | handle }}" class="template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         <div {% if settings.header_tategaki %}class="tategaki-header"{% endif %}>
-            <header>
-                <h1 id="title">{{ site.name }}</h1>
-                {% include 'navbar' %}
-                <hr>
+            <header id="site-header">
+                <div class="wrapper">
+                    <h1 id="title">{{ site.name }}</h1>
+                    {% include 'navbar' %}                    
+                </div>
             </header>
             <main>
                 {% include 'breadcrumbs' %}
@@ -39,28 +40,30 @@
             </main>
         </div>
         <footer>
-            {% unless settings.footer_about_shop == ""%}
-            <p>
-                <mark>{{ settings.footer_about_shop }}</mark>
-            </p> 
-            {% endunless %}
-            {% if settings.social_show_links %}
-                <nav>
-                    {% include 'socialmedia-icon-links' %}
-                </nav>
-            {% endif %}
-            {% if settings.footer_quicklinks_enable %}
-            {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
-              <nav>
-                <ul>
-                {% for link in navigation[linkList.id].links %}
-                    <li><a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
-                {% endfor %}                   
-                </ul>
-              </nav> 
-            {% endfor %}
-            {% endif %}
-            <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
+            <div class="wrapper">
+                {% unless settings.footer_about_shop == ""%}
+                <p>
+                    <mark>{{ settings.footer_about_shop }}</mark>
+                </p> 
+                {% endunless %}
+                {% if settings.social_show_links %}
+                    <nav>
+                        {% include 'socialmedia-icon-links' %}
+                    </nav>
+                {% endif %}
+                {% if settings.footer_quicklinks_enable %}
+                {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
+                  <nav>
+                    <ul>
+                    {% for link in navigation[linkList.id].links %}
+                        <li><a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
+                    {% endfor %}                   
+                    </ul>
+                  </nav> 
+                {% endfor %}
+                {% endif %}
+                <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
+            </div>
         </footer>
         {% if template == 'article' %}
             {{ 'toc.js' | asset_url | script_tag }}
