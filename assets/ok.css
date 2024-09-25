@@ -269,11 +269,6 @@ video {
     max-width: 100%;
     height: auto;
 }
-body {
-    padding: var(--ok-s-3);
-    max-width: var(--ok-body);
-    margin: auto;
-}
 article {
     padding-bottom: var(--ok-s-6);
 }
