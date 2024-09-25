@@ -25,4 +25,5 @@ Minimal CSS approach where Ok.css framework used with minor additions in a separ
 * Table of contents on article template.
 * Styled asides in articles written in Markdown.
 * Styled fotnotes created with Markdown.
+* Automatic Dark and Light mode
 
