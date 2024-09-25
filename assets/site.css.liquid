@@ -6,23 +6,28 @@ body {
 }
 
 main {
-    flex-grow: 2;    
+    flex-grow: 2; 
+    max-width: var(--ok-body);
+    padding: var(--ok-s-3);
+    margin: auto;
 }
 
-#site-header {
-    display: flex;
-    align-items: baseline;
-    gap: var(--ok-s-3);
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    background-color: var(--ok-bg-0);
+#site-header, 
+footer {
+    background-color: var(--ok-bg-1); 
+}
+
+header .wrapper,
+footer .wrapper {
+    max-width: var(--ok-body);
+    padding: var(--ok-s-3);
+    margin: auto;
 }
 
 #title {
     font-size: var(--ok-fs-2);
-    margin-top: var(--ok-s-3);
-    text-transform: uppercase;  
+    margin-top: var(--ok-s-2);
+    margin-bottom: var(--ok-s-2); 
 }
 
 header nav ul li {
