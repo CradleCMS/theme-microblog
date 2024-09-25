@@ -54,7 +54,7 @@
               <nav>
                 <ul>
                 {% for link in navigation[linkList.id].links %}
-                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    <li><a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
                 {% endfor %}                   
                 </ul>
               </nav> 

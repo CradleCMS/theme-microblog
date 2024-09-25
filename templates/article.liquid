@@ -3,30 +3,33 @@
     <header>
         <h1>{{ meta.h1 }}</h1>
         <p>
-            {% if article.author %}{{ article.author }}<br>{% endif article.author %}<time itemprop="dateModified">{{ article.updatedAt | date }}</time> 
+            {% if article.author %}{{ article.author }}<br>{% endif article.author %}<time itemprop="dateModified">{{ article.publishAt | date }}</time> 
     	</p>    
     </header>
     {{ article.excerpt }}
     <hr>
-    <div id="content">{{ article.html }}</div>
-	{% if blog %}
-        <button {% if article.previousUrl == blank %}disabled=""{% endif %}>
-            {% unless article.previousUrl == blank %}
-            <a href="{{ article.previousUrl }}">&larr; {{ lang.older_post | def:'Previous'}}</a>
-            {% else %}
-            <p>&larr; {{ lang.older_post | def:'Previous'}}</p>
-    	    {% endunless %}
-        </button>
-    	<button {% if article.nextUrl == blank %}disabled=""{% endif %}>
-    	    {% unless article.nextUrl == blank %}
-    	    <a href="{{ article.nextUrl }}">{{ lang.newer_post | def:'Next'}} &rarr;</a>
-    	    {% else %}
-    	    <p>{{ lang.newer_post | def:'Next'}} &rarr;</p>
-    	    {% endunless %}
-    	</button>
-    {% endif %}
+    <div id="content"  class="{{ article.format }}">{{ article.html }}</div>
+    <nav id="next-prev">
+        <p>
+            {% if article.previous.size > 0 %}
+            <a href="{{ article | url:article.previous }}">&larr; {{ lang.older_post | def:'Previous'}}</a>
+            {% endif %}            
+        </p>
+        <p>
+            {% if article.next.size > 0 %}
+            <a href="{{ article | url:article.next }}">{{ lang.newer_post | def:'Next'}} &rarr;</a>
+            {% endif %}            
+        </p>
+    </nav>
 </article>
+
 <style>
+#next-prev {
+  display: flex;
+  justify-content: space-between;
+}
+
+    
 #content aside {
     padding-left: var(--ok-s-5);
     color: var(--ok-tc-1);

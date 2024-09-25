@@ -142,21 +142,26 @@
         },
         {
           "caption": "Use Tategaki style",
-          "key": "header_tategaki",
           "description": "Will place the header to the right in vertical right to left writing mode.",
+          "key": "header_tategaki",
           "type": "checkbox"
         }
       ]
     },
     {
       "key": "homepage",
-      "caption": "Homepage",
       "type": "section",
+      "caption": "Homepage",
       "settings": [
         {
-          "key": "hmoepage_page_header",
           "caption": "Page content",
+          "key": "homepage_page_header",
           "type": "header"
+        },
+        {
+          "caption": "Show page",
+          "key": "homepage_page_show",
+          "type": "checkbox"
         },
         {
           "caption": "Page",
@@ -165,9 +170,21 @@
           "type": "page"
         },
         {
-          "caption": "Show page",
-          "key": "homepage_page_show",
+          "caption": "Blog article section",
+          "key": "homepage_blog_post_header",
+          "type": "header"
+        },
+        {
+          "caption": "Show section",
+          "description": "Display posts from blog on homepage",
+          "key": "homepage_blog_enabled",
           "type": "checkbox"
+        },
+        {
+          "caption": "Blog",
+          "default": "Select blog",
+          "key": "homepage_blog",
+          "type": "blog"
         }
       ]
     },
@@ -321,7 +338,7 @@
       "settings": [
         {
           "caption": "Social links",
-          "description": "All links must begin with <i>http://</i> or <i>https://</i>",
+          "description": "All links must begin with \u003ci\u003ehttp://\u003c/i\u003e or \u003ci\u003ehttps://\u003c/i\u003e",
           "key": "social_links",
           "type": "header"
         },

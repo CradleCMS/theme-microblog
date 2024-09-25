@@ -1,0 +1,9 @@
+<section class="blog">
+    <h1>{{ meta.h1 }}</h1>
+    <div class="{{ blog.format }}">{{ blog.html }}</div>
+</section>
+<section class="image-card-container">
+    {% for article in blog.articles %}
+        {% include 'image-card' %}
+	{% endfor %}
+</section>

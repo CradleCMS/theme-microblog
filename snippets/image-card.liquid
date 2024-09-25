@@ -1,0 +1,10 @@
+<a class="image-card" href="{{ article | url }}">
+    <img src="{{ article | img_url:450,0 }}" alt="{{ article.image.alt }}" />
+    <div>
+        <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
+        <h4>{{ article.title }}</h4>
+		<p>
+            <button href="{{ article | url }}">View</button>            
+		</p>
+    </div>
+</a>
