@@ -10,26 +10,30 @@
     <hr>
     <div id="content"  class="{{ article.format }}">{{ article.html }}</div>
     <nav id="next-prev">
-        <p>
+        <p class="prev">
             {% if article.previous.size > 0 %}
-            <a href="{{ article | url:article.previous }}">&larr; {{ lang.older_post | def:'Previous'}}</a>
+            <a href="{{ article | url:article.previous }}">&larr; {{ lang.older_post | def:'Previous'}}<br>{{ blog.articles[article.previous].meta.h1 }}</a>
             {% endif %}            
         </p>
-        <p>
+        <p class="next">
             {% if article.next.size > 0 %}
-            <a href="{{ article | url:article.next }}">{{ lang.newer_post | def:'Next'}} &rarr;</a>
+            <a href="{{ article | url:article.next }}">{{ lang.newer_post | def:'Next'}} &rarr;<br>{{ blog.articles[article.next].meta.h1 }}</a>
             {% endif %}            
         </p>
     </nav>
 </article>
-
 <style>
 #next-prev {
   display: flex;
   justify-content: space-between;
 }
-
-    
+#next-prev .next,
+#next-prev .prev {
+  max-width: 50%;
+}
+#next-prev .next {
+    text-align: right;
+}
 #content aside {
     padding-left: var(--ok-s-5);
     color: var(--ok-tc-1);
