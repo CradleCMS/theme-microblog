@@ -141,6 +141,17 @@
           "type": "header"
         },
         {
+          "caption": "Use hamburger menu",
+          "key": "header_hamburger",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Use mega menu setting",
+          "description": "Only works with hamburger setting.",
+          "key": "header_mega",
+          "type": "checkbox"
+        },
+        {
           "caption": "Use Tategaki style",
           "description": "Will place the header to the right in vertical right to left writing mode.",
           "key": "header_tategaki",

@@ -23,6 +23,9 @@
         }
       ],
       "footer_quicklinks_enable": true,
+      "header_hamburger":true,
+      "header_mega":true,
+      "header_tategaki":false,
       "ok-accent-0": "#3e67fa",
       "ok-accent-1": "#4788ff",
       "ok-t-hl": "#ffcf30",
