@@ -11,14 +11,14 @@
     <div id="content"  class="{{ article.format }}">{{ article.html }}</div>
     <nav id="next-prev">
         <p class="prev">
-            {% if article.previous.size > 0 %}
-            <a href="{{ article | url:article.previous }}">&larr; {{ lang.older_post | def:'Previous'}}<br>{{ blog.articles[article.previous].meta.h1 }}</a>
-            {% endif %}            
+            {% unless article.previous == empty %}
+            <a href="{{ article.previous | url }}">&larr; Previous<br>{{ article.previous.title }}</a>
+            {% endunless %}            
         </p>
         <p class="next">
-            {% if article.next.size > 0 %}
-            <a href="{{ article | url:article.next }}">{{ lang.newer_post | def:'Next'}} &rarr;<br>{{ blog.articles[article.next].meta.h1 }}</a>
-            {% endif %}            
+            {% unless article.next == empty %}
+            <a href="{{ article.next | url }}">Next &rarr;<br>{{ article.next.title }}</a>
+            {% endunless %}            
         </p>
     </nav>
 </article>
