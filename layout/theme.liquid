@@ -12,6 +12,11 @@
         <meta name="keywords" content="{{ metaKeywords | escape }}" />
         {% endif %}
         <link rel="canonical" href="{{ canonicalUrl }}" />
+        {% if template == 'index' %}
+        <script type="application/ld+json">
+            {% include 'structured-data' %}
+        </script>
+        {% endif %}
         {% include 'open-graph-tags' %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {% if settings.favicon_enable %}
