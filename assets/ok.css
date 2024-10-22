@@ -478,9 +478,6 @@ input[type="search"] {
 input[type="file"] {
     max-width: 300px;
 }
-input[type="number"] {
-    -moz-appearance: textfield;
-}
 input[type="checkbox"],
 input[type="radio"] {
     display: inline;
