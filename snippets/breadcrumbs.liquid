@@ -12,17 +12,11 @@
             {% else %}
                 <li><a href="collection.url">{{ collection.title }}</a></li>
             {% endunless %}
-        {% elseif template == 'blog' %}
-            {% if currentTags.size > 0 %}
-                <li><a href="/{{ blog.url }}">{{ blog.title }}</a></li>
-                <li><span>{{ currentTags | join: " + " }}</span></li>
-            {% else %}
-                <li><span>{{ blog.title }}</span></li>
-            {% endif %}
+        {% elseif template contains 'blog' %}
+            <li><span>{{ blog.title }}</span></li>
         {% elseif template == 'article' %}
-            {% if blog %}
-            <li><a href="/{{ blog.url }}">{{ blog.title }}</a></li>
-            {% endif %}
+            {% assign blog = blogs[article.blog] %}
+            <li><a href="{{ blog | url }}">{{ blog.title }}</a></li>
             <li><span>{{ article.title }}</span></li>
         {% elseif template contains 'page' %}
             <li><span>{{ page.title }}</span></li>
