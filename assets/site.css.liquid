@@ -42,25 +42,59 @@ nav a:last-child svg {
     margin-right: 0;
 }
 
+/* Full height and width header */
+
+.full #site-header {
+  height: 60vh;
+  opacity: 0.9;
+  overflow: hidden;
+}
+
+.full #site-header .bg {
+  background-image: url(/assets/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  animation-duration: 60s;
+}
+
+.full #site-header .wrapper {
+    text-align: center;  
+    background-color: var(--ok-bg-0);
+    opacity: 0.9;
+    margin-top: 5em;
+}
+
+.full #site-header nav ul li {
+    margin: 1em;    
+}
+
+@keyframes bg-movement {
+  from {background-position: top left;}
+  to {background-position: center;}
+}
+
 /* Tategaki header */
 
-.tategaki-header {
+.tategaki {
     display: flex;
     flex-direction: row-reverse;    
     margin-top: var(--ok-s-4);
 }
 
-.tategaki-header header {
+.tategaki header {
     writing-mode: vertical-rl;
     margin-left: var(--ok-s-4);
 }
 
-.tategaki-header h1 {
+.tategaki h1 {
     margin-top:0;
     margin-left: var(--ok-s-2);
 }
 
-.tategaki-header li {
+.tategaki li {
     margin-top: 0;
     margin-bottom: var(--ok-s-3);
 }

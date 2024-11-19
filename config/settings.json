@@ -136,11 +136,6 @@
           "type": "linklist"
         },
         {
-          "caption": "Header style",
-          "key": "header_tategaki_header",
-          "type": "header"
-        },
-        {
           "caption": "Use hamburger menu",
           "key": "header_hamburger",
           "type": "checkbox"
@@ -152,10 +147,35 @@
           "type": "checkbox"
         },
         {
-          "caption": "Use Tategaki style",
-          "description": "Will place the header to the right in vertical right to left writing mode.",
-          "key": "header_tategaki",
-          "type": "checkbox"
+          "caption": "Header style",
+          "key": "header_style",
+          "type": "header"
+        },
+        {
+          "caption": "Header layout style",
+          "key": "header_layout",
+          "options": [
+            {
+              "caption": "Basic",
+              "value": "basic"
+            },
+            {
+              "caption": "Full viewport",
+              "value": "full"
+            },
+            {
+              "caption": "Use Tategaki style",
+              "value": "tategaki"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Background image",
+          "description": "Image for full viewport setting",
+          "filename": "bg.jpg",
+          "key": "header_bg_image",
+          "type": "asset"
         }
       ]
     },
