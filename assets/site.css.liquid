@@ -103,8 +103,7 @@ nav a:last-child svg {
 
 .image-card-container {
     display: grid;
-    grid-template-areas: "a a a";
-    grid-auto-columns: 33.3%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     gap: var(--ok-s-3);
 }
 .image-card {
