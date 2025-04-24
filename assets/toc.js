@@ -1,3 +1,17 @@
+let mql = window.matchMedia("(max-width: 160ch)");
+if(mql.matches) {
+     document.getElementById("toc-details").open = false;
+}
+function resetMql() {
+  let mql = window.matchMedia("(min-width: 160ch)");
+  if(mql.matches) {
+    document.getElementById("toc-details").open = true;
+  } else {
+    document.getElementById("toc-details").removeAttribute('open');
+  }
+}
+window.onresize = resetMql;
+
 window.addEventListener('DOMContentLoaded', function (event) { // Let the DOM content load before running the script.
 //Get all headings only from the actual contents.
 var contentContainer = document.getElementById('content'); // Add this div to the html

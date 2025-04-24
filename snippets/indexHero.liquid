@@ -1,0 +1,20 @@
+<div class="index-hero" style="min-height: {{ settings.indexOtfHeight | def:'80vh' }}; background-image: url({{ settings.indexOtfImg | asset_img_url:1024,0 }}); background-color: {{ settings.indexOtfBgColor }};">
+  <div class="hero-content text-center {{ settings.indexOtfCardBg | def:'bg-0' }}">
+    <div class="hero-text">
+      {% if settings.indexOtfTitle %}
+        <h1>{{ settings.indexOtfTitle }}</h1>
+      {% endif %}
+      {% if settings.indexOtfText %}
+        <p>{{ settings.indexOtfText }}</p>
+      {% endif %}
+      {% if settings.indexOtfBtnUrl %}
+        <a class="btn" href="{{ settings.indexOtfBtnUrl }}">{{ settings.indexOtfBtnText }}</a>
+      {% endif %}
+    </div>
+    {% if settings.indexOtfFgimg %}
+        <figure>
+            <img src="{{ settings.indexOtfFgimg | asset_img_url:450,0 }}">
+        </figure>
+    {% endif %}
+  </div>
+</div>

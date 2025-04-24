@@ -10,24 +10,27 @@
       "caption": "Global settings",
       "settings": [
         {
-          "caption": "Favicon",
-          "key": "favicon",
-          "type": "header"
-        },
-        {
-          "caption": "Enable custom favicon",
-          "default": false,
-          "key": "favicon_enable",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Favicon",
-          "description": "32px x 32px png",
-          "filename": "favicon.png",
-          "key": "favicon_image",
-          "max-height": 32,
-          "max-width": 32,
-          "type": "asset"
+          "caption": "Border radius",
+          "key": "ok-br",
+          "options": [
+            {
+              "caption": "None",
+              "value": "0"
+            },
+            {
+              "caption": "0.25 rem",
+              "value": "0.25rem"
+            },
+            {
+              "caption": "0.5 rem",
+              "value": "0.5rem"
+            },
+            {
+              "caption": "1 rem",
+              "value": "1rem"
+            }
+          ],
+          "type": "select"
         },
         {
           "caption": "Extra code for the head",
@@ -43,52 +46,76 @@
       "settings": [
         {
           "caption": "General colors",
+          "description": "The theme has built-in Light- and Dark-mode which is used dependent on the users browser settings.",
           "key": "general_colors",
           "type": "header"
         },
         {
-          "caption": "Highlight text (--ok-t-hl)",
-          "key": "ok-t-hl",
-          "type": "color"
-        },
-        {
-          "caption": "Accent (--ok-accent-0)",
+          "caption": "Buttons",
+          "default": "#3e67fa",
+          "description": "Used mainly for buttons",
           "key": "ok-accent-0",
           "type": "color"
         },
         {
-          "caption": "Accent (--ok-accent-1)",
+          "caption": "Disabled buttons",
+          "default": "#4788ff",
           "key": "ok-accent-1",
           "type": "color"
         },
         {
+          "caption": "Highlight text (--ok-t-hl)",
+          "default": "#ffcf30",
+          "key": "ok-t-hl",
+          "type": "color"
+        },
+        {
           "caption": "Light mode",
+          "description": "Colors only for Light mode",
           "key": "light_mode",
           "type": "header"
         },
         {
-          "caption": "Text color (--ok-tc-0)",
+          "caption": "Text color",
+          "default": "#000000",
           "description": "Used for text",
           "key": "ok-tc-0",
           "type": "color"
         },
         {
           "caption": "Text color (--ok-tc-1)",
+          "default": "#747474",
           "key": "ok-tc-1",
           "type": "color"
         },
         {
-          "caption": "Text color (--ok-tc-2)",
-          "key": "ok-tc-2",
+          "caption": "Bg color (b-0)",
+          "default": "#ffffff",
+          "description": "Main bg color",
+          "key": "ok-bg-0",
+          "type": "color"
+        },
+        {
+          "caption": "Bg color (b-1)",
+          "default": "#f0f0f0",
+          "key": "ok-bg-1",
+          "type": "color"
+        },
+        {
+          "caption": "Bg color (b-2)",
+          "default": "#cccccc",
+          "key": "ok-bg-2",
           "type": "color"
         },
         {
           "caption": "Accent text color (--ok-tc-accent)",
+          "default": "#3173de",
           "key": "ok-tc-accent",
           "type": "color"
         },
         {
           "caption": "Code color (--ok-tc-code)",
+          "default": "#c23a30",
           "key": "ok-tc-code",
           "type": "color"
         },
@@ -99,27 +126,49 @@
         },
         {
           "caption": "Text color (--ok-tc-0)",
-          "description": "Used for text",
+          "default": "#ffffff",
           "key": "d-ok-tc-0",
           "type": "color"
         },
         {
           "caption": "Text color (--ok-tc-1)",
+          "default": "#ababab",
           "key": "d-ok-tc-1",
           "type": "color"
         },
         {
           "caption": "Text color (--ok-tc-2)",
+          "default": "#929292",
           "key": "d-ok-tc-2",
           "type": "color"
         },
         {
+          "caption": "Bg color (b-0)",
+          "default": "#000000",
+          "key": "d-ok-bg-0",
+          "type": "color"
+        },
+        {
+          "caption": "Bg color (b-1)",
+          "default": "#212121",
+          "key": "d-ok-bg-1",
+          "type": "color"
+        },
+        {
+          "caption": "Bg color (b-2)",
+          "default": "#3e3e3e",
+          "key": "d-ok-bg-2",
+          "type": "color"
+        },
+        {
           "caption": "Accent text color (--ok-tc-accent)",
+          "default": "#5c9aff",
           "key": "d-ok-tc-accent",
           "type": "color"
         },
         {
           "caption": "Code color (--ok-tc-code)",
+          "default": "#ed5853",
           "key": "d-ok-tc-code",
           "type": "color"
         }
@@ -131,51 +180,33 @@
       "caption": "Header",
       "settings": [
         {
-          "caption": "Main nav linklist",
-          "key": "main_nav",
-          "type": "linklist"
-        },
-        {
-          "caption": "Use hamburger menu",
-          "key": "header_hamburger",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Use mega menu setting",
-          "description": "Only works with hamburger setting.",
-          "key": "header_mega",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Header style",
-          "key": "header_style",
-          "type": "header"
-        },
-        {
-          "caption": "Header layout style",
-          "key": "header_layout",
+          "caption": "Background color",
+          "key": "headerBg",
           "options": [
             {
-              "caption": "Basic",
-              "value": "basic"
+              "caption": "Default",
+              "value": "bg-0"
             },
             {
-              "caption": "Full viewport",
-              "value": "full"
+              "caption": "Darker",
+              "value": "bg-1"
             },
             {
-              "caption": "Use Tategaki style",
-              "value": "tategaki"
+              "caption": "Darkest",
+              "value": "bg-2"
             }
           ],
           "type": "select"
         },
         {
-          "caption": "Background image",
-          "description": "Image for full viewport setting",
-          "filename": "bg.jpg",
-          "key": "header_bg_image",
-          "type": "asset"
+          "caption": "Main nav linklist",
+          "key": "main_nav",
+          "type": "linklist"
+        },
+        {
+          "caption": "Use mega menu setting",
+          "key": "header_mega",
+          "type": "checkbox"
         }
       ]
     },
@@ -184,6 +215,187 @@
       "type": "section",
       "caption": "Homepage",
       "settings": [
+        {
+          "caption": "Hero box",
+          "description": "Over the fold hero section for index page",
+          "key": "indexOtf",
+          "type": "header"
+        },
+        {
+          "caption": "Use hero box",
+          "key": "indexOtfShow",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Height of Viewport",
+          "key": "indexOtfHeight",
+          "options": [
+            {
+              "caption": "20%",
+              "value": "20vh"
+            },
+            {
+              "caption": "30%",
+              "value": "30vh"
+            },
+            {
+              "caption": "40%",
+              "value": "40vh"
+            },
+            {
+              "caption": "50%",
+              "value": "50vh"
+            },
+            {
+              "caption": "60%",
+              "value": "60vh"
+            },
+            {
+              "caption": "70%",
+              "value": "70vh"
+            },
+            {
+              "caption": "80%",
+              "value": "80vh"
+            },
+            {
+              "caption": "90%",
+              "value": "90vh"
+            },
+            {
+              "caption": "100%",
+              "value": "100vh"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Background image",
+          "description": "Recommendation: minimum 1024px x 1024px, jpg-format",
+          "key": "indexOtfImg",
+          "type": "image"
+        },
+        {
+          "caption": "Background color",
+          "key": "indexOtfBgColor",
+          "type": "color"
+        },
+        {
+          "caption": "Background on content",
+          "key": "indexOtfCardBg",
+          "options": [
+            {
+              "caption": "None",
+              "value": ""
+            },
+            {
+              "caption": "Default",
+              "value": " bg-0"
+            },
+            {
+              "caption": "Darker base color",
+              "value": " bg-1"
+            },
+            {
+              "caption": "Darkest base color",
+              "value": " bg-2"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Title",
+          "key": "indexOtfTitle",
+          "type": "text"
+        },
+        {
+          "caption": "Text",
+          "key": "indexOtfText",
+          "rows": 6,
+          "type": "textarea"
+        },
+        {
+          "caption": "Button text",
+          "key": "indexOtfBtnText",
+          "type": "text"
+        },
+        {
+          "caption": "Button URL",
+          "key": "indexOtfBtnUrl",
+          "type": "text"
+        },
+        {
+          "caption": "Image",
+          "description": "Minimum 450px wide, jpg or png format",
+          "key": "indexOtfFgimg",
+          "type": "image"
+        },
+        {
+          "caption": "Banner sections",
+          "description": "",
+          "key": "indexBannerHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Show banners",
+          "default": false,
+          "key": "indexBannerShow",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Banners",
+          "key": "indexBanner",
+          "settings": [
+            {
+              "caption": "Background color",
+              "key": "bannerBgColor",
+              "type": "color"
+            },
+            {
+              "caption": "Image",
+              "key": "bannerImage",
+              "maxHeight": 500,
+              "maxWidth": 1400,
+              "type": "image"
+            },
+            {
+              "caption": "Image alt",
+              "key": "bannerImageAlt",
+              "type": "text"
+            },
+            {
+              "caption": "Title",
+              "key": "bannerTitle",
+              "type": "text"
+            },
+            {
+              "caption": "Text",
+              "key": "bannerText",
+              "type": "textarea"
+            },
+            {
+              "caption": "Primary Button URL",
+              "key": "bannerUrl",
+              "type": "text"
+            },
+            {
+              "caption": "Primary Button text",
+              "key": "bannerBtnTitle",
+              "type": "text"
+            },
+            {
+              "caption": "Outline Button URL",
+              "key": "banner2Url",
+              "type": "text"
+            },
+            {
+              "caption": "Outline Button text",
+              "key": "banner2BtnTitle",
+              "type": "text"
+            }
+          ],
+          "type": "struct"
+        },
         {
           "caption": "Page content",
           "key": "homepage_page_header",
@@ -227,32 +439,8 @@
         {
           "caption": "About us text",
           "key": "footer_about_shop",
+          "rows": "6",
           "type": "textarea"
-        },
-        {
-          "caption": "Quick links",
-          "key": "quick_links",
-          "type": "header"
-        },
-        {
-          "caption": "Show links",
-          "default": true,
-          "key": "footer_quicklinks_enable",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Select link lists",
-          "description": "Create link-lists under Navigation",
-          "key": "footer_linklists",
-          "settings": [
-            {
-              "caption": "Link list",
-              "default": "footer",
-              "key": "footer_linklist",
-              "type": "linklist"
-            }
-          ],
-          "type": "struct"
         }
       ]
     },

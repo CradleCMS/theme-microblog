@@ -1,0 +1,18 @@
+<div class="article-post">
+    <img src="{{ article | img_url:200,0 }}" alt="{{ article.image.alt }}" />
+    <div>
+        <a href="{{ article | url }}">
+            <dt><h4>{{ article.title }}</h4></dt>
+            <dd>
+                <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
+                <br>
+            {% if article.excerpt.size > 0 %}
+    		    {{ article.excerpt | strip_html }}
+    		{% else %}
+    			{{ article.html | strip_html | truncatewords: 40 }}
+    		{% endif %}	
+            </dd>
+        </a>
+        <p><a href="{{ article | url }}">Read</a></p> 
+    </div>            
+</div>

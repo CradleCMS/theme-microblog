@@ -5,12 +5,8 @@
         <title>
         	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
         </title>	
-        {% if metaDescription %}
         <meta name="description" content="{{ metaDescription | escape }}" />
-        {% endif %}
-        {% if metaKeywords %}
         <meta name="keywords" content="{{ metaKeywords | escape }}" />
-        {% endif %}
         <link rel="canonical" href="{{ canonicalUrl }}" />
         {% if template == 'index' %}
         <script type="application/ld+json">
@@ -19,32 +15,40 @@
         {% endif %}
         {% include 'open-graph-tags' %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {% if settings.favicon_enable %}
-            <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
-            <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_img_url:'16','16' }}">
-            <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon.png' | asset_img_url:'32','32' }}">
-            <link rel="icon" href="{{ 'icon.svg' | asset_img_url }}" type="image/svg+xml">
-            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-            <link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
-        {% endif %}
-        <link rel="stylesheet" href="{{ 'ok.css' | asset_url }}">
+        <link rel="icon" href="/favicon.ico">
+        <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="{{ 'site.css.liquid' | asset_url }}">
         {{ settings.head_extra_code }}
     </head>
     <body id="{{ meta.title | handle }}" class="template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
-        <div class="{{ settings.header_layout }}">
-            <header id="site-header">
-                <div class="bg">
-                     <div class="wrapper {% if settings.header_hamburger %}hamburger-menu{% else %}expanded-menu{% endif %}">
-                        <h1 id="title">{{ site.name }}</h1>
-                        {% include 'navbar' %}                    
-                    </div>                   
-                </div>
+        <div class="basic">
+            <header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
+                <div class="wrapper hamburger-menu">
+                    <h1 id="title"><a href="/">{{ site.name }}</a></h1>
+                    {% if settings.main_nav %}
+                        {% include 'navbar' %}    
+                    {% endif %}
+                </div>                   
             </header>
-            <main>
-                {% include 'breadcrumbs' %}
-                {{ contentForLayout }}
-            </main>
+            {% if template == 'article' or template == 'page' %}
+                <main class="text-content">
+                    {% include 'breadcrumbs' %}
+                    {{ contentForLayout }}
+                </main>
+            {% elseif template == 'index' %}
+                {% if settings.indexOtfShow %}
+                  {% include 'indexHero' %}
+                {% endif %}
+                <main>
+                    {{ contentForLayout }}
+                </main>
+            {% else %}
+                <main>
+                    {{ contentForLayout }}
+                </main>
+            {% endif %}
+            
         </div>
         <footer>
             <div class="wrapper">
@@ -72,8 +76,9 @@
                 <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
             </div>
         </footer>
-        {% if template == 'article' %}
-            {{ 'toc.js' | asset_url | script_tag }}
-        {% endif %}
     </body>
+    {{ 'site.js' | script_tag }}
+    {% if template == 'article' %}
+        {{ 'toc.js' | script_tag }}
+    {% endif %}
 </html>

@@ -1,0 +1,28 @@
+{% if settings.indexBanner.size > 0 %}
+    {% for banners in settings.indexBanner %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        <section class="index-banner index-{{ forloop.index }} lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %}" style="background-color:{{ banners.bannerBgColor }};">
+            {% if banners.bannerTitle or banners.bannerText or banners.bannerUrl or banners.banner2Url %}
+              <div class="banner-content text-center">
+                {% if banners.bannerTitle %}
+                    <h2>{{ banners.bannerTitle }}</h2>
+                {% endif %}
+                {% if banners.bannerText %}
+                    <p>{{ banners.bannerText }}</p>
+                {% endif %}
+                {% if banners.bannerUrl or banners.banner2Url %}
+                    <div class="btn-row">
+                      {% if banners.banner2Url %}<a href="{{ banners.banner2Url }}" class="btn btn-outline">{{ banners.banner2BtnTitle }}</a>{% endif %}
+                      {% if banners.bannerUrl %}<a href="{{ banners.bannerUrl }}" class="btn">{{ banners.bannerBtnTitle }}</a>{% endif %}
+                    </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if banners.bannerImage %}
+              <figure class="">
+                <img loading="lazy" src="{{ banners.bannerImage | asset_img_url:400,0,'cropped' }}" alt="{{ banners.bannerImageAlt }}"/>
+              </figure>
+            {% endif %}
+        </section>
+    {% endfor %}
+{% endif %}

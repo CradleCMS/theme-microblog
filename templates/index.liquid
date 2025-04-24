@@ -1,20 +1,23 @@
+{% if settings.indexBannerShow %}
+    {% include 'indexBannerSections' %}
+{% endif %}
 {% if settings.homepage_page_show %}
-<section>
-    {% let p = pages[settings.homepage_page.id] %}
-    <div>
-        {{ p.html }}
-    </div>
-</section>
+    <section>
+        {% let p = pages[settings.homepage_page.id] %}
+        <div>
+            {{ p.html }}
+        </div>
+    </section>
 {% endif %}
 {% if settings.homepage_blog_enabled %}
-{% unless blogs[settings.homepage_blog.id] == empty %}
-<section>
-    <h2>{{ blogs[settings.homepage_blog.id].meta.h1 }}</h2>
-    <div class="image-card-container">
-    	{% for article in blogs[settings.homepage_blog.id].articles limit:3 %}
-            {% include 'image-card' %}
-    	{% endfor %}
-    </div>    
-</section>
-{% endunless %}
+    {% unless blogs[settings.homepage_blog.id] == empty %}
+        <section>
+            <h2>{{ blogs[settings.homepage_blog.id].meta.h1 }}</h2>
+            <div class="image-card-container">
+            	{% for article in blogs[settings.homepage_blog.id].articles limit:3 %}
+                    {% include 'image-card' %}
+            	{% endfor %}
+            </div>    
+        </section>
+    {% endunless %}
 {% endif %}

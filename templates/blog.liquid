@@ -5,45 +5,10 @@
 </section>
 <section class="article-list">
 <dl>
+    <hr>
     {% for article in blog.articles %}
-        <div class="article-post">
-            <img src="{{ article | img_url:200,0 }}" alt="{{ article.image.alt }}" />
-            <div>
-                <a href="{{ article | url }}">
-                    <dt><h4>{{ article.title }}</h4></dt>
-                    <dd>
-                        <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
-                        <br>
-                    {% if article.excerpt.size > 0 %}
-            		    {{ article.excerpt | strip_html }}
-            		{% else %}
-            			{{ article.html | strip_html | truncatewords: 40 }}
-            		{% endif %}	
-                        
-                    </dd>
-                </a>
-                <p><a href="{{ article | url }}">Read</a></p> 
-            </div>            
-        </div>
+        {% include 'articleCard' %}
         <hr>
 	{% endfor %}
 </dl>
 </section>
-<style>
-.article-post {
-    display: grid;
-    grid-template-areas: "a a";
-    grid-auto-columns: 200px auto;
-    gap: var(--ok-s-3);
-}    
-
-.article-list h4, 
-.article-list dd {
-    color: var(--ok-tc-0);
-    margin-top: 0;
-}
-
-.article-list p {
-    text-align: right;
-}
-</style>

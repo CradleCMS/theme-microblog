@@ -1,12 +1,12 @@
 {% assign main-nav = settings.main_nav %}
 <nav class="">
-    <details id="topnav" {% unless settings.header_hamburger %}open{% endunless %}>
+    <details id="topnav" class="nav">
         <summary class="hamburger"></summary>
         <ul {% if settings.header_mega %}class="mega-menu"{% endif %}>
         {% for link in navigation[main-nav].links %}
             {% if link.type == 'navigation' %}
              <li>
-                <details class="subnav" {% if settings.header_mega and settings.header_hamburger %}open{% endif %}>
+                <details class="subnav nav" {% if settings.header_mega and settings.header_hamburger %}open{% endif %}>
                     <summary>{{ link.title }}</summary>
                     <ul>
                     {% for childlink in navigation[link.handle].links %}
@@ -136,9 +136,3 @@ summary.hamburger::marker {
     }
 }
 </style>
-<script>
-    let mql = window.matchMedia("(max-width: 1000px)");
-    if(mql.matches) {
-         document.getElementById("topnav").open = false;
-    }
-</script>
