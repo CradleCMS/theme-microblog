@@ -1189,6 +1189,8 @@ summary.hamburger::marker {
     .hero-content {
         max-width: var(--ok-body);
         margin: 0 auto;
+        margin-left: var(--ok-s-3);
+        margin-right: var(--ok-s-3);
         padding: var(--ok-s-3);
         display: flex;
         flex-direction: row;
@@ -1203,6 +1205,7 @@ summary.hamburger::marker {
             display: grid;
             place-content: center;
             justify-items: center;
+            padding: var(--ok-s-4);
         }
         h1 {
             margin: 0;
@@ -1228,14 +1231,23 @@ summary.hamburger::marker {
     .index-hero .hero-content {
         margin: var(--ok-s-3);
         margin-bottom: var(--ok-s-6);
+        max-width: 950px;
         p {
             font-size: var(--ok-fs-2);
         }
+        figure {
+            max-width: 50%;     
+        }
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .index-hero .hero-content {
         flex-direction: column-reverse;
+        max-width: 420px;
+        figure {
+            max-width: 100%;    
+            margin: 0 auto;
+        }
     }
 }
 /* INDEX HERO ENDS */
