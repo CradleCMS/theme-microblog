@@ -195,6 +195,7 @@ template {
     --ok-down-0: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
     --ok-down-1: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23848484'/%3E%3C/svg%3E");
 }
+{% if settings.darkmodeEnabled %}
 @media (prefers-color-scheme: dark) {
     :root {
         --ok-tc-accent: {{ settings.d-ok-tc-0 | def:'#5c9aff' }};
@@ -211,6 +212,7 @@ template {
         --ok-down-1: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23929292'/%3E%3C/svg%3E");
     }
 }
+{% endif %}
 *,
 :after,
 :before {

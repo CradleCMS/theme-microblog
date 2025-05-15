@@ -125,25 +125,31 @@
           "type": "header"
         },
         {
-          "caption": "Text color (--ok-tc-0)",
+          "caption": "Enable dark mode",
+          "description": "Colorscheme for users with their device on dark mode setting",
+          "key": "darkmodeEnabled",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Text color (main)",
           "default": "#ffffff",
           "key": "d-ok-tc-0",
           "type": "color"
         },
         {
-          "caption": "Text color (--ok-tc-1)",
+          "caption": "Text color (tc-1)",
           "default": "#ababab",
           "key": "d-ok-tc-1",
           "type": "color"
         },
         {
-          "caption": "Text color (--ok-tc-2)",
+          "caption": "Text color (tc-2)",
           "default": "#929292",
           "key": "d-ok-tc-2",
           "type": "color"
         },
         {
-          "caption": "Bg color (b-0)",
+          "caption": "Bg color (main)",
           "default": "#000000",
           "key": "d-ok-bg-0",
           "type": "color"
@@ -161,13 +167,13 @@
           "type": "color"
         },
         {
-          "caption": "Accent text color (--ok-tc-accent)",
+          "caption": "Accent text color",
           "default": "#5c9aff",
           "key": "d-ok-tc-accent",
           "type": "color"
         },
         {
-          "caption": "Code color (--ok-tc-code)",
+          "caption": "Code color",
           "default": "#ed5853",
           "key": "d-ok-tc-code",
           "type": "color"
