@@ -1,18 +1,16 @@
 <div class="article-post">
-    <img src="{{ article | img_url:200,0 }}" alt="{{ article.image.alt }}" />
+    <img src="{{ article | img_url:150,0 }}" alt="{{ article.image.alt }}" />
     <div>
         <a href="{{ article | url }}">
-            <dt><h4>{{ article.title }}</h4></dt>
-            <dd>
-                <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
-                <br>
+            <h4>{{ article.title }}</h4>
+            <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
+            <br>
             {% if article.excerpt.size > 0 %}
-    		    {{ article.excerpt | strip_html }}
+    		    <p>{{ article.excerpt | strip_html }}</p>
     		{% else %}
-    			{{ article.html | strip_html | truncatewords: 40 }}
+    			<p>{{ article.html | strip_html | truncatewords: 20 }}</p>
     		{% endif %}	
-            </dd>
         </a>
         <p><a href="{{ article | url }}">Read</a></p> 
-    </div>            
+    </div>   
 </div>

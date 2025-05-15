@@ -76,16 +76,43 @@
           "type": "header"
         },
         {
+          "caption": "Heading color",
+          "default": "#111111",
+          "description": "Used for headings: h1, h2 and h3",
+          "key": "hc-0",
+          "type": "color"
+        },
+        {
           "caption": "Text color",
           "default": "#000000",
-          "description": "Used for text",
+          "description": "Used for most text",
           "key": "ok-tc-0",
           "type": "color"
         },
         {
-          "caption": "Text color (--ok-tc-1)",
+          "caption": "Less prominent text color",
           "default": "#747474",
+          "description": "Used for figcaptions etc.",
           "key": "ok-tc-1",
+          "type": "color"
+        },
+        {
+          "caption": "Disabled text color",
+          "default": "#848484",
+          "key": "ok-tc-2",
+          "type": "color"
+        },
+        {
+          "caption": "Accent text color",
+          "default": "#3173de",
+          "description": "Used for links and similar",
+          "key": "ok-tc-accent",
+          "type": "color"
+        },
+        {
+          "caption": "Code block text color",
+          "default": "#c23a30",
+          "key": "ok-tc-code",
           "type": "color"
         },
         {
@@ -105,18 +132,6 @@
           "caption": "Bg color (b-2)",
           "default": "#cccccc",
           "key": "ok-bg-2",
-          "type": "color"
-        },
-        {
-          "caption": "Accent text color (--ok-tc-accent)",
-          "default": "#3173de",
-          "key": "ok-tc-accent",
-          "type": "color"
-        },
-        {
-          "caption": "Code color (--ok-tc-code)",
-          "default": "#c23a30",
-          "key": "ok-tc-code",
           "type": "color"
         },
         {

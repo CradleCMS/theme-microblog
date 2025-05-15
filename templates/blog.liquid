@@ -4,11 +4,7 @@
     <hr>
 </section>
 <section class="article-list">
-<dl>
-    <hr>
     {% for article in blog.articles %}
         {% include 'articleCard' %}
-        <hr>
-	{% endfor %}
-</dl>
+    {% endfor %}
 </section>

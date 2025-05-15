@@ -188,6 +188,7 @@ template {
     --ok-tc-0: {{ settings.ok-tc-0 | def:'#000' }};
     --ok-tc-1: {{ settings.ok-tc-1 | def:'#747474' }};
     --ok-tc-2: {{ settings.ok-tc-2 | def:'#848484' }};
+    --hc-0: {{ settings.hc-0 | def:'#111' }};
     --ok-bg-0: {{ settings.ok-bg-0 | def:'#fff' }};
     --ok-bg-1: {{ settings.ok-bg-1 | def:'#f0f0f0' }};
     --ok-bg-2: {{ settings.ok-bg-2 | def:'#ccc' }};
@@ -299,6 +300,9 @@ h6 {
     font-size: var(--ok-fs-0);
     text-transform: uppercase;
     font-weight: var(--ok-fw-1);
+}
+h1, h2, h3 {
+    color: var(--hc-0);    
 }
 h1,
 h2,
@@ -1353,24 +1357,28 @@ summary.hamburger::marker {
 /* Blogs ENDS */
 
 /* Articles */
-.article-post {
+.article-list {
     display: grid;
-    grid-template-areas: "a a";
-    grid-auto-columns: 200px auto;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
     gap: var(--ok-s-3);
-}    
+}
 .article-list h4, 
-.article-list dd {
+.article-list p {
     color: var(--ok-tc-0);
     margin-top: 0;
 }
-.article-list dd {
-    padding-left: var(--ok-s-0);
+.article-post {
+    display: grid;
+    grid-template-areas: "a a";
+    grid-auto-columns: 150px auto;
+    gap: var(--ok-s-3);
+    border-bottom: var(--ok-b-0);
+    padding: var(--ok-s-3);
+    margin:0;
 }
-.article-list p {
-    text-align: right;
+.article-post img {
+    margin: 0;    
 }
-
 aside {
     padding: var(--ok-s-3);
     background: var(--ok-t-hl);
