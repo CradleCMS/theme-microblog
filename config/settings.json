@@ -58,12 +58,6 @@
           "type": "color"
         },
         {
-          "caption": "Disabled buttons",
-          "default": "#4788ff",
-          "key": "ok-accent-1",
-          "type": "color"
-        },
-        {
           "caption": "Highlight text (--ok-t-hl)",
           "default": "#ffcf30",
           "key": "ok-t-hl",

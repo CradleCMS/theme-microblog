@@ -163,7 +163,7 @@ template {
     --ok-fw-1: 600;
     --ok-fw-2: 700;
     --ok-fw-3: 700;
-    --ok-fs-0: 0.75rem;
+    --ok-fs-0: 0.8rem;
     --ok-fs-1: 1rem;
     --ok-fs-2: 1.25rem;
     --ok-fs-3: 1.5rem;
@@ -182,7 +182,7 @@ template {
     --ok-lh-heading: 1.25;
     --ok-t-hl:  {{ settings.ok-t-hl | def:'#ffcf30' }};
     --ok-accent-0: {{ settings.ok-accent-0 | def:'#3e67fa' }};
-    --ok-accent-1: {{ settings.ok-accent-1 | def:'#4788ff' }};
+    --ok-accent-1: color-mix(in oklab,var(--ok-accent-0),var(--ok-bg-0));
     --ok-tc-accent: {{ settings.ok-tc-accent | def:'#3173de' }};
     --ok-tc-code: {{ settings.ok-tc-code | def:'#c23a30' }};
     --ok-tc-0: {{ settings.ok-tc-0 | def:'#000' }};
@@ -301,7 +301,7 @@ h6 {
     text-transform: uppercase;
     font-weight: var(--ok-fw-1);
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
     color: var(--hc-0);    
 }
 h1,
@@ -633,13 +633,13 @@ input[type="range"]::-ms-thumb {
     transform: translateY(0.25rem);
 }
 input[type="range"]:focus:not(:disabled)::-webkit-slider-thumb {
-    background-color: var(--ok-accent-1);
+    background-color: var(--ok-accent-0);
 }
 input[type="range"]:focus:not(:disabled)::-moz-range-thumb {
-    background-color: var(--ok-accent-1);
+    background-color: var(--ok-accent-0);
 }
 input[type="range"]:focus:not(:disabled)::-ms-thumb {
-    background-color: var(--ok-accent-1);
+    background-color: var(--ok-accent-0);
 }
 input[type="range"]:disabled {
     cursor: default;
@@ -654,15 +654,15 @@ input[type="range"]:disabled::-ms-track {
     cursor: default;
 }
 input[type="range"]:disabled::-webkit-slider-thumb {
-    background-color: var(--ok-bg-2);
+    background-color: var(--ok-accent-1);
     cursor: default;
 }
 input[type="range"]:disabled::-moz-range-thumb {
-    background-color: var(--ok-bg-2);
+    background-color: var(--ok-accent-1);
     cursor: default;
 }
 input[type="range"]:disabled::-ms-thumb {
-    background-color: var(--ok-bg-2);
+    background-color: var(--ok-accent-1);
     cursor: default;
 }
 select {
@@ -726,7 +726,7 @@ a.btn,
     color: #fff;
     font-weight: var(--ok-fw-1);
     height: 2.5rem;
-    border: 1px solid var(--ok-accent-0);
+    border: 2px solid var(--ok-accent-0);
     padding: var(--ok-s-2) var(--ok-s-3);
     white-space: nowrap;
     min-width: auto;
@@ -734,8 +734,8 @@ a.btn,
 a.btn-outline, 
 .btn-outline {
     background-color: transparent;
-    border: var(--ok-b-1);
-    color: var(--ok-tc-0);
+    border: 2px solid var(--ok-accent-0);
+    color: var(--ok-accent-0);
 }
 input::-webkit-file-upload-button {
     display: inline-block;
@@ -1337,9 +1337,8 @@ summary.hamburger::marker {
 .image-card div {
     padding: var(--ok-s-3);
 }
-.image-card h4 {
+.image-card h3 {
     margin-top: var(--ok-s-0);
-    color: var(--ok-tc-0);
 }
 .image-card p {
     text-align: center;
@@ -1393,9 +1392,11 @@ aside {
     #toc-details {
         position: absolute;
         background: var(--ok-bg-0);
-        border: var(--ok-b-0);
         padding: 0.5rem;   
         font-size: var(--ok-fs-0);
+        height: auto;
+        border: 2px solid var(--ok-accent-0);
+        color: var(--ok-accent-0);
     }
     #toc-details summary {
         margin: 0;
@@ -1416,12 +1417,16 @@ aside {
         margin-left: -27ch;
     }
     #toc {
-        max-width: 25ch;
+        width: 30ch;
+        text-wrap: wrap;
+        font-size: var(--ok-fs-0);
+    }
+    #toc-details[open] summary{
+      pointer-events: none;        
     }
     #toc-details[open] summary::marker, #docs-box[open] summary.main::marker {
       content: "";
-      list-style:
-    none;
+      list-style: none;
     }
 }
 .footnotes ol {
@@ -1429,8 +1434,6 @@ aside {
     color: var(--ok-tc-1);     
     font-family: monospace;
 }
-
-
 .sidenav ul {
     margin-bottom: 0;    
 }
@@ -1443,7 +1446,6 @@ aside {
 .sidenav li {
         
 }
-
 #next-prev {
   display: flex;
   justify-content: space-between;
@@ -1455,7 +1457,6 @@ aside {
 #next-prev .next {
     text-align: right;
 }
-
 /* Articles ENDS*/
 /* Closed site */
 
