@@ -53,7 +53,7 @@
         {
           "caption": "Buttons",
           "default": "#3e67fa",
-          "description": "Used mainly for buttons",
+          "description": "Accent color used mainly for buttons",
           "key": "ok-accent-0",
           "type": "color"
         },
@@ -72,7 +72,7 @@
         {
           "caption": "Heading color",
           "default": "#111111",
-          "description": "Used for headings: h1, h2 and h3",
+          "description": "Used for headings: h1, h2, h3 and h4",
           "key": "hc-0",
           "type": "color"
         },
@@ -138,6 +138,13 @@
           "description": "Colorscheme for users with their device on dark mode setting",
           "key": "darkmodeEnabled",
           "type": "checkbox"
+        },
+        {
+          "caption": "Heading color",
+          "default": "#ffffff",
+          "description": "Used for headings: h1, h2, h3 and h4",
+          "key": "d-hc-0",
+          "type": "color"
         },
         {
           "caption": "Text color (main)",
