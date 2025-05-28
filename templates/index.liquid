@@ -14,7 +14,7 @@
         <section>
             <h2>{{ blogs[settings.homepage_blog.id].meta.h1 }}</h2>
             <div class="image-card-container">
-            	{% for article in blogs[settings.homepage_blog.id].articles limit:3 %}
+            	{% for article in blogs[settings.homepage_blog.id].articles limit:6 %}
                     {% include 'image-card' %}
             	{% endfor %}
             </div>    

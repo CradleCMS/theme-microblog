@@ -1,7 +1,21 @@
 {% assign main-nav = settings.main_nav %}
 <nav class="">
     <details id="topnav" class="nav">
-        <summary class="hamburger"></summary>
+        <summary class="hamburger">
+            <svg class="open" width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                <g id='Menu' color='var(--ok-tc-0)'>
+                <title>Menu</title>
+                	<line x1='5' y1='7' x2='19' y2='7' id='Path' stroke='currentcolor' stroke-width='2' stroke-linecap='round'></line>
+                	<line x1='5' y1='17' x2='19' y2='17' id='Path' stroke='currentcolor' stroke-width='2' stroke-linecap='round'></line>
+                	<line x1='5' y1='12' x2='19' y2='12' id='Path' stroke='currentcolor' stroke-width='2' stroke-linecap='round'></line>
+                </g>
+            </svg>
+            <svg class="close" viewBox='0 0 24 24' width='24px' height='24px' xmlns='http://www.w3.org/2000/svg'>
+                <g id='Close' color='var(--ok-tc-0)'>
+                    <path d='M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z' fill='#currentColor'></path>
+                </g>
+            </svg>
+        </summary>
         <ul {% if settings.header_mega %}class="mega-menu"{% endif %}>
         {% for link in navigation[main-nav].links %}
             {% if link.type == 'navigation' %}
@@ -22,117 +36,3 @@
         </ul>
     </details>
 </nav>   
-<style>
-#site-header nav {
-    margin: 0;
-}    
-#site-header details.subnav {
-    display: inline;
-}
-#site-header summary {
-    cursor: pointer;
-    margin:0;
-    color: var(--ok-tc-accent);
-    font-weight: var(--ok-fw-1);
-}
-#site-header details.subnav summary:hover {
-    text-decoration: underline;
-}
-summary.hamburger::marker {
-    content: "";
-}
-#site-header details.subnav li {
-    display: block;
-}
-@media (min-width: 1001px) {
-    .expanded-menu details.subnav ul {
-        display: inline;
-        position: absolute;
-        background-color: var(--ok-bg-1);
-        padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
-        border: var(--ok-b-0);
-    }
-    
-    .full #site-header {
-    }
-}
-.hamburger-menu.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--ok-s-3);
-}
-.hamburger-menu #topnav > ul {
-    position: absolute;
-    right: var(--ok-s-1);
-    background-color: var(--ok-bg-0);
-    padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
-    border: var(--ok-b-0);
-    border-radius: var(--ok-br);
-}
-.hamburger-menu details li {
-    display: block;
-} 
-.hamburger-menu summary.hamburger::marker {
-    font-size: var(--ok-fs-2);
-    content: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000'%3E%3Cg stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ctitle%3EMenu%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Menu'%3E%3Crect id='Rectangle' fill-rule='nonzero' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cline x1='5' y1='7' x2='19' y2='7' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='17' x2='19' y2='17' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-.hamburger-menu details[open] summary.hamburger::marker {
-    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24px' height='24px' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z' fill='%230F0F0F'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-}
-.hamburger-menu {
-    position: relative;
-}
-.hamburger-menu .mega-menu {
-  width: 100ch;
-  max-width: 99vw;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: space-between;
-}
-.hamburger-menu .mega-menu .subnav li {
-    text-transform: none;
-}
-.hamburger-menu .mega-menu summary {
-    pointer-events: none;
-}
-.hamburger-menu .mega-menu summary::marker {
-    content: "";
-}
-@media (max-width: 1000px) {
-    #site-header .wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: var(--ok-s-3);
-    }
-    .hamburger-menu .mega-menu {
-        display: block;
-    }
-    summary.hamburger::marker {
-        content: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000'%3E%3Cg stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ctitle%3EMenu%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Menu'%3E%3Crect id='Rectangle' fill-rule='nonzero' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cline x1='5' y1='7' x2='19' y2='7' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='17' x2='19' y2='17' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    #site-header #topnav > ul {
-        position: absolute;
-        right: var(--ok-s-1);
-        background-color: var(--ok-bg-0);
-        padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
-        border: var(--ok-b-0);
-        border-radius: var(--ok-br);
-        width: calc(var(--ok-body) / 2);
-        max-width: 98vw;
-    }
-    #site-header #topnav li {
-        display: block;
-    }
-    
-    .full #site-header .bg {
-        display: inherit;
-    }
-    
-    .full #site-header .wrapper {
-        margin-top:0;
-    }
-}
-</style>

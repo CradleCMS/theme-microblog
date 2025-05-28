@@ -54,13 +54,13 @@
           "caption": "Buttons",
           "default": "#3e67fa",
           "description": "Accent color used mainly for buttons",
-          "key": "ok-accent-0",
+          "key": "color-accent-0",
           "type": "color"
         },
         {
           "caption": "Highlight text (--ok-t-hl)",
           "default": "#ffcf30",
-          "key": "ok-t-hl",
+          "key": "color-t-hl",
           "type": "color"
         },
         {
@@ -73,59 +73,59 @@
           "caption": "Heading color",
           "default": "#111111",
           "description": "Used for headings: h1, h2, h3 and h4",
-          "key": "hc-0",
+          "key": "color-hc-0",
           "type": "color"
         },
         {
           "caption": "Text color",
           "default": "#000000",
           "description": "Used for most text",
-          "key": "ok-tc-0",
+          "key": "color-tc-0",
           "type": "color"
         },
         {
           "caption": "Less prominent text color",
           "default": "#747474",
           "description": "Used for figcaptions etc.",
-          "key": "ok-tc-1",
+          "key": "color-tc-1",
           "type": "color"
         },
         {
           "caption": "Disabled text color",
           "default": "#848484",
-          "key": "ok-tc-2",
+          "key": "color-tc-2",
           "type": "color"
         },
         {
           "caption": "Accent text color",
           "default": "#3173de",
           "description": "Used for links and similar",
-          "key": "ok-tc-accent",
+          "key": "color-tc-accent",
           "type": "color"
         },
         {
           "caption": "Code block text color",
           "default": "#c23a30",
-          "key": "ok-tc-code",
+          "key": "color-tc-code",
           "type": "color"
         },
         {
           "caption": "Bg color (b-0)",
           "default": "#ffffff",
           "description": "Main bg color",
-          "key": "ok-bg-0",
+          "key": "color-bg-0",
           "type": "color"
         },
         {
           "caption": "Bg color (b-1)",
           "default": "#f0f0f0",
-          "key": "ok-bg-1",
+          "key": "color-bg-1",
           "type": "color"
         },
         {
           "caption": "Bg color (b-2)",
           "default": "#cccccc",
-          "key": "ok-bg-2",
+          "key": "color-bg-2",
           "type": "color"
         },
         {
@@ -143,55 +143,55 @@
           "caption": "Heading color",
           "default": "#ffffff",
           "description": "Used for headings: h1, h2, h3 and h4",
-          "key": "d-hc-0",
+          "key": "color-d-hc-0",
           "type": "color"
         },
         {
           "caption": "Text color (main)",
           "default": "#ffffff",
-          "key": "d-ok-tc-0",
+          "key": "color-d-tc-0",
           "type": "color"
         },
         {
           "caption": "Text color (tc-1)",
           "default": "#ababab",
-          "key": "d-ok-tc-1",
+          "key": "color-d-tc-1",
           "type": "color"
         },
         {
           "caption": "Text color (tc-2)",
           "default": "#929292",
-          "key": "d-ok-tc-2",
+          "key": "color-d-tc-2",
           "type": "color"
         },
         {
           "caption": "Bg color (main)",
           "default": "#000000",
-          "key": "d-ok-bg-0",
+          "key": "color-d-bg-0",
           "type": "color"
         },
         {
           "caption": "Bg color (b-1)",
           "default": "#212121",
-          "key": "d-ok-bg-1",
+          "key": "color-d-bg-1",
           "type": "color"
         },
         {
           "caption": "Bg color (b-2)",
           "default": "#3e3e3e",
-          "key": "d-ok-bg-2",
+          "key": "color-d-bg-2",
           "type": "color"
         },
         {
           "caption": "Accent text color",
           "default": "#5c9aff",
-          "key": "d-ok-tc-accent",
+          "key": "color-d-tc-accent",
           "type": "color"
         },
         {
           "caption": "Code color",
           "default": "#ed5853",
-          "key": "d-ok-tc-code",
+          "key": "color-d-tc-code",
           "type": "color"
         }
       ]
@@ -351,6 +351,11 @@
           "description": "Minimum 450px wide, jpg or png format",
           "key": "indexOtfFgimg",
           "type": "image"
+        },
+        {
+          "caption": "Image Alt",
+          "key": "indexOtfFgimgAlt",
+          "type": "text"
         },
         {
           "caption": "Banner sections",

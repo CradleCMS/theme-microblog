@@ -1,8 +1,7 @@
 /* OK.css  */
-
 /*! OK.css v1.2.0 | MIT License | github.com/andrewh0/okcss */
-@import url("https://rsms.me/inter/inter.css");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
 html {
     line-height: 1.15;
 }
@@ -178,37 +177,39 @@ template {
     --ok-s-5: 2rem;
     --ok-s-6: 2.5rem;
     --ok-s-7: 3rem;
-    --ok-lh-body: {{ settings.ok-lh-body }};
+    --ok-lh-body: {{ settings.color-lh-body }};
     --ok-lh-heading: 1.25;
-    --ok-t-hl:  {{ settings.ok-t-hl | def:'#ffcf30' }};
-    --ok-accent-0: {{ settings.ok-accent-0 | def:'#3e67fa' }};
-    --ok-accent-1: color-mix(in oklab,var(--ok-accent-0),var(--ok-bg-0));
-    --ok-tc-accent: {{ settings.ok-tc-accent | def:'#3173de' }};
-    --ok-tc-code: {{ settings.ok-tc-code | def:'#c23a30' }};
-    --ok-tc-0: {{ settings.ok-tc-0 | def:'#000' }};
-    --ok-tc-1: {{ settings.ok-tc-1 | def:'#747474' }};
-    --ok-tc-2: {{ settings.ok-tc-2 | def:'#848484' }};
-    --hc-0: {{ settings.hc-0 | def:'#111' }};
-    --ok-bg-0: {{ settings.ok-bg-0 | def:'#fff' }};
-    --ok-bg-1: {{ settings.ok-bg-1 | def:'#f0f0f0' }};
-    --ok-bg-2: {{ settings.ok-bg-2 | def:'#ccc' }};
-    --ok-b-0: 1px solid #cbcbcb;
-    --ok-b-1: 1px solid #848484;
+    --ok-t-hl:  {{ settings.color-t-hl | def:'#ffcf30' }};
+    --ok-accent-0: {{ settings.color-accent-0 | def:'#3e67fa' }};
+    --ok-accent-1: color-mix(in oklab,var(--color-accent-0),var(--color-bg-0));
+    --ok-tc-accent: {{ settings.color-tc-accent | def:'#3173de' }};
+    --ok-tc-code: {{ settings.color-tc-code | def:'#c23a30' }};
+    --ok-tc-0: {{ settings.color-tc-0 | def:'#000' }};
+    --ok-tc-1: {{ settings.color-tc-1 | def:'#747474' }};
+    --ok-tc-2: {{ settings.color-tc-2 | def:'#848484' }};
+    --hc-0: {{ settings.color-hc-0 | def:'#111' }};
+    --ok-bg-0: {{ settings.color-bg-0 | def:'#fff' }};
+    --bg-0-card: color-mix(in oklab,var(--ok-bg-0),#000000 2%);
+    --bg-0-disabled: color-mix(in oklab,var(--ok-bg-0),#000000 10%);
+    --ok-bg-1: {{ settings.color-bg-1 | def:'#efefef' }};
+    --ok-bg-2: {{ settings.color-bg-2 | def:'#ccc' }};
+    --ok-b-0: 1px solid color-mix(in oklab,var(--ok-tc-0),#ffffff);
+    --ok-b-1: 1px solid var(--ok-tc-0);
     --ok-down-0: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23747474'/%3E%3C/svg%3E");
     --ok-down-1: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23848484'/%3E%3C/svg%3E");
 }
 {% if settings.darkmodeEnabled %}
 @media (prefers-color-scheme: dark) {
     :root {
-        --ok-tc-accent: {{ settings.d-ok-tc-0 | def:'#5c9aff' }};
-        --ok-tc-code: {{ settings.d-ok-tc-code | def:'#ed5853' }};
-        --ok-tc-0: {{ settings.d-ok-tc-0 | def:'#fff' }};
-        --ok-tc-1: {{ settings.d-ok-tc-1 | def:'#ababab' }};
-        --ok-tc-2: {{ settings.d-ok-tc-2 | def:'#929292' }};
-        --hc-0: {{ settings.d-hc-0 | def:'#fff' }};
-        --ok-bg-0: {{ settings.d-ok-bg-0 | def:'#000' }};
-        --ok-bg-1: {{ settings.d-ok-bg-1 | def:'#212121' }};
-        --ok-bg-2: {{ settings.d-ok-bg-2 | def:'#3e3e3e' }};
+        --ok-tc-accent: {{ settings.color-d-tc-0 | def:'#5c9aff' }};
+        --ok-tc-code: {{ settings.color-d-tc-code | def:'#ed5853' }};
+        --ok-tc-0: {{ settings.color-d-tc-0 | def:'#fff' }};
+        --ok-tc-1: {{ settings.color-d-tc-1 | def:'#ababab' }};
+        --ok-tc-2: {{ settings.color-d-tc-2 | def:'#929292' }};
+        --hc-0: {{ settings.color-d-hc-0 | def:'#fff' }};
+        --ok-bg-0: {{ settings.color-d-bg-0 | def:'#000' }};
+        --ok-bg-1: {{ settings.color-d-bg-1 | def:'#212121' }};
+        --ok-bg-2: {{ settings.color-d-bg-2 | def:'#3e3e3e' }};
         --ok-b-0: 1px solid #747474;
         --ok-b-1: 1px solid #929292;
         --ok-down-0: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='8' viewBox='0 0 12 8' width='24' fill='none'%3E%3Cpath d='M6 6l4-4h1v1-1L6 7 1 2h1l4 4z' fill='%23ababab'/%3E%3C/svg%3E");
@@ -485,7 +486,7 @@ input::-ms-reveal {
 }
 input:disabled,
 textarea:disabled {
-    background-color: var(--ok-bg-1);
+    background-color: var(--bg-0-disabled);
 }
 input[type="search"] {
     -webkit-appearance: none;
@@ -571,8 +572,8 @@ input[type="range"]::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     border-radius: var(--ok-br);
     border: var(--ok-b-0);
-    background-color: var(--ok-bg-1);
-    background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
+    background-color: var(--bg-0-disabled);
+    background-image: linear-gradient(var(--bg-0-disabled), var(--bg-0-disabled));
     width: 100%;
     height: 0.5rem;
     color: transparent;
@@ -584,8 +585,8 @@ input[type="range"]::-moz-range-track {
     -moz-appearance: none;
     border-radius: var(--ok-br);
     border: var(--ok-b-0);
-    background-color: var(--ok-bg-1);
-    background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
+    background-color: var(--bg-0-disabled);
+    background-image: linear-gradient(var(--bg-0-disabled), var(--bg-0-disabled));
     width: 100%;
     height: 0.5rem;
     color: transparent;
@@ -596,8 +597,8 @@ input[type="range"]::-ms-track {
     -ms-appearance: none;
     border-radius: var(--ok-br);
     border: var(--ok-b-0);
-    background-color: var(--ok-bg-1);
-    background-image: linear-gradient(var(--ok-bg-1), var(--ok-bg-1));
+    background-color: var(--bg-0-disabled);
+    background-image: linear-gradient(var(--bg-0-disabled), var(--bg-0-disabled));
     width: 100%;
     height: 0.5rem;
     color: transparent;
@@ -689,14 +690,14 @@ select::-ms-expand {
 }
 select:not([multiple]):disabled {
     background-image: var(--ok-down-1);
-    background-color: var(--ok-bg-1);
+    background-color: var(--bg-0-disabled);
     cursor: default;
 }
 select[multiple] {
     border-radius: var(--ok-br);
 }
 select[multiple]:disabled {
-    background-color: var(--ok-bg-1);
+    background-color: var(--bg-0-disabled);
 }
 select[multiple] option {
     color: var(--ok-t-);
@@ -815,7 +816,7 @@ thead {
 }
 tfoot tr,
 thead tr {
-    background-color: var(--ok-bg-1);
+    background-color: var(--bg-0-disabled);
     font-size: var(--ok-fs-0);
     text-transform: uppercase;
     color: var(--ok-tc-0);
@@ -1104,18 +1105,6 @@ summary.hamburger::marker {
 #site-header details.subnav li {
     display: block;
 }
-@media (min-width: 1001px) {
-    .expanded-menu details.subnav ul {
-        display: inline;
-        position: absolute;
-        background-color: var(--ok-bg-1);
-        padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
-        border: var(--ok-b-0);
-    }
-    
-    .full #site-header {
-    }
-}
 .hamburger-menu.wrapper {
     display: flex;
     justify-content: space-between;
@@ -1133,12 +1122,14 @@ summary.hamburger::marker {
 .hamburger-menu details li {
     display: block;
 } 
-.hamburger-menu summary.hamburger::marker {
-    font-size: var(--ok-fs-3);
-    content: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000'%3E%3Cg stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ctitle%3EMenu%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Menu'%3E%3Crect id='Rectangle' fill-rule='nonzero' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cline x1='5' y1='7' x2='19' y2='7' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='17' x2='19' y2='17' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.hamburger-menu details summary svg.close {
+    display:none;    
 }
-.hamburger-menu details[open] summary.hamburger::marker {
-    content: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24px' height='24px' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M6.99486 7.00636C6.60433 7.39689 6.60433 8.03005 6.99486 8.42058L10.58 12.0057L6.99486 15.5909C6.60433 15.9814 6.60433 16.6146 6.99486 17.0051C7.38538 17.3956 8.01855 17.3956 8.40907 17.0051L11.9942 13.4199L15.5794 17.0051C15.9699 17.3956 16.6031 17.3956 16.9936 17.0051C17.3841 16.6146 17.3841 15.9814 16.9936 15.5909L13.4084 12.0057L16.9936 8.42059C17.3841 8.03007 17.3841 7.3969 16.9936 7.00638C16.603 6.61585 15.9699 6.61585 15.5794 7.00638L11.9942 10.5915L8.40907 7.00636C8.01855 6.61584 7.38538 6.61584 6.99486 7.00636Z' fill='%230F0F0F'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+.hamburger-menu details[open] summary svg.close {
+    display:block;    
+}
+.hamburger-menu details[open] summary svg.open {
+    display:none;    
 }
 .hamburger-menu {
     position: relative;
@@ -1160,6 +1151,9 @@ summary.hamburger::marker {
 .hamburger-menu .mega-menu summary::marker {
     content: "";
 }
+.hamburger svg {
+    margin: 0;    
+}
 @media (max-width: 1000px) {
     #site-header .wrapper {
         display: flex;
@@ -1169,9 +1163,6 @@ summary.hamburger::marker {
     }
     .hamburger-menu .mega-menu {
         display: block;
-    }
-    summary.hamburger::marker {
-        content: url("data:image/svg+xml,%3Csvg width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000'%3E%3Cg stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Ctitle%3EMenu%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Menu'%3E%3Crect id='Rectangle' fill-rule='nonzero' x='0' y='0' width='24' height='24'%3E%3C/rect%3E%3Cline x1='5' y1='7' x2='19' y2='7' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='17' x2='19' y2='17' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12' id='Path' stroke='%230C0310' stroke-width='2' stroke-linecap='round'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     #site-header #topnav > ul {
         position: absolute;
@@ -1213,11 +1204,13 @@ summary.hamburger::marker {
 /* BREADCRUMBS ENDS */
 /* INDEX HERO */
 .index-hero {
+    background-size: cover;
     display: grid;
     place-content: center;
     padding-top: 4rem;
+    padding-bottom: var(--ok-s-3);
     .hero-content {
-        max-width: var(--ok-body);
+        max-width: calc(var(--ok-body) * 0.66);
         margin: 0 auto;
         margin-left: var(--ok-s-3);
         margin-right: var(--ok-s-3);
@@ -1331,7 +1324,7 @@ summary.hamburger::marker {
     flex-direction: column;
     justify-content: space-between;
     min-height: 200px;
-    background-color: var(--ok-bg-1);
+    background-color: var(--bg-0-card);
     border-radius: var(--ok-br);
     padding: 1rem;
 }

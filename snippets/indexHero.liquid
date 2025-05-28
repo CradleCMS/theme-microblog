@@ -13,7 +13,7 @@
     </div>
     {% if settings.indexOtfFgimg %}
         <figure>
-            <img src="{{ settings.indexOtfFgimg | asset_img_url:450,0 }}">
+            <img src="{{ settings.indexOtfFgimg | asset_img_url:450,0 }}" alt="{{ settings.indexOtfFgimgAlt }}">
         </figure>
     {% endif %}
   </div>
