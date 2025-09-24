@@ -24,7 +24,7 @@
                     <summary>{{ link.title }}</summary>
                     <ul>
                     {% for childlink in navigation[link.handle].links %}
-                        <li><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
+                        <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
                     {% endfor %}                    
                     </ul>
                 </details>
