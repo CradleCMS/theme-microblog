@@ -3,19 +3,19 @@
         <li><a href="/">{{ lang.home | def:'Home'}}</a></li>
         {% if template == 'blog' %}
             {% if currentTags.size > 0 %}
-                <li><a href="/{{ blog | url }}">{{ blog.title }}</a></li>
+                <li><a href="/{{ blog | url }}">{{ blog.title | t }}</a></li>
                 <li><span>{{ currentTags | join: " + " }}</span></li>
             {% else %}
-                <li><span>{{ blog.title }}</span></li>
+                <li><span>{{ blog.title | t }}</span></li>
             {% endif %}
         {% elseif template == 'article' %}
             {% assign blog = blogs[article.blog] %}
-            <li><a href="{{ blog | url }}">{{ blog.title }}</a></li>
-            <li><span>{{ article.title }}</span></li>
+            <li><a href="{{ blog | url }}">{{ blog.title | t }}</a></li>
+            <li><span>{{ article.title | t }}</span></li>
         {% elseif template contains 'page' %}
-            <li><span>{{ page.title }}</span></li>
+            <li><span>{{ page.title | t }}</span></li>
         {% else %}
-            <li><span>{{ meta.title }}</span></li>
+            <li><span>{{ meta.title | t }}</span></li>
         {% endif %}
     </ul>
 </nav>

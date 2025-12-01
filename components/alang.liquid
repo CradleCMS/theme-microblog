@@ -1,0 +1,36 @@
+<script>
+/* alang.js
+ * CradleCMS lang switcher component
+ * version 1.0.0
+ */
+
+class Lang extends HTMLElement {
+    #target
+    connectedCallback() {
+        this.#target = this.firstElementChild;
+        if(!this.#target) {
+            this.#target = document.getElementById('lang-select');
+        }
+        this.#target.addEventListener('change',(ev) => {
+            const lang = ev.target.value;
+            if(!lang) return;
+            fetch(`/site_lang/${lang}`, {
+                method: "GET",
+                 headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                credentials: "include",
+            }).then(res => {
+                if (!res.ok) throw res;
+                return res.json();
+            }).then(res => {
+                location.href = res.url;
+            }).catch(err => {
+                console.error(err);
+            });
+        });
+    }
+}
+customElements.define('a-lang', Lang);
+</script>

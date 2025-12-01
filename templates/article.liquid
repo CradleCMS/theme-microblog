@@ -17,12 +17,12 @@
     <nav id="next-prev">
         <p class="prev">
             {% unless article.previous == empty %}
-            <a href="{{ article.previous | url }}">&larr; Previous<br>{{ article.previous.title }}</a>
+            <a href="{{ article.previous | url }}">&larr; {{ 'Previous' | t }}<br>{{ article.previous.title }}</a>
             {% endunless %}            
         </p>
         <p class="next">
             {% unless article.next == empty %}
-            <a href="{{ article.next | url }}">Next &rarr;<br>{{ article.next.title }}</a>
+            <a href="{{ article.next | url }}">{{ 'Next' | t }} &rarr;<br>{{ article.next.title }}</a>
             {% endunless %}            
         </p>
     </nav>

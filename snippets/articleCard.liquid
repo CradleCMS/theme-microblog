@@ -2,7 +2,7 @@
     <a href="{{ article | url }}">
         <div class="article-content">
             <div>
-                <h3>{{ article.title }}</h3>
+                <h3>{{ article.title | t }}</h3>
                 <time itemprop="datePublished" datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time>
                 <br>
                 {% if article.excerpt.size > 0 %}
@@ -11,7 +11,7 @@
         			<p>{{ article.html | strip_html | truncatewords: 20 }}</p>
         		{% endif %}	
             </div>   
-            <img src="{{ article | img_url:150,0 }}" alt="{{ article.image.alt }}" />
+            <img src="{{ article | img_url:150,0 }}" alt="{{ article.image.alt | t }}" />
         </div>
     </a>
 </div>
