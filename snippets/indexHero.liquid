@@ -2,18 +2,18 @@
   <div class="hero-content text-center {{ settings.indexOtfCardBg | def:'bg-0' }}">
     <div class="hero-text">
       {% if settings.indexOtfTitle %}
-        <h1>{{ settings.indexOtfTitle }}</h1>
+        <h1>{{ settings.indexOtfTitle | t }}</h1>
       {% endif %}
       {% if settings.indexOtfText %}
-        <p>{{ settings.indexOtfText }}</p>
+        <p>{{ settings.indexOtfText | t }}</p>
       {% endif %}
       {% if settings.indexOtfBtnUrl %}
-        <a class="btn" href="{{ settings.indexOtfBtnUrl }}">{{ settings.indexOtfBtnText }}</a>
+        <a class="btn" href="{{ settings.indexOtfBtnUrl }}">{{ settings.indexOtfBtnText | t }}</a>
       {% endif %}
     </div>
     {% if settings.indexOtfFgimg %}
         <figure>
-            <img src="{{ settings.indexOtfFgimg | asset_img_url:450,0 }}" alt="{{ settings.indexOtfFgimgAlt }}">
+            <img src="{{ settings.indexOtfFgimg | asset_img_url:450,0 }}" alt="{{ settings.indexOtfFgimgAlt | t }}">
         </figure>
     {% endif %}
   </div>

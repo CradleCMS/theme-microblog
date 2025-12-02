@@ -26,8 +26,17 @@
             <header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
                 <div class="wrapper hamburger-menu">
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
+                    {% if site.langs.size > 1 %}
+                    <a-lang>
+                        <select name="lang" value="{{lang}}">
+                            {% for l in site.langs | keys | sort %}
+                            <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
+                            {% endfor %}
+                        </select>
+                    </a-lang>
+                    {% endif %}
                     {% if settings.main_nav %}
-                        {% include 'navbar' %}    
+                        {% include 'navbar' %}
                     {% endif %}
                 </div>                   
             </header>
@@ -54,7 +63,7 @@
             <div class="wrapper">
                 {% unless settings.footer_about_shop == ""%}
                 <p>
-                    <mark>{{ settings.footer_about_shop }}</mark>
+                    <mark>{{ settings.footer_about_shop | t:'default' }}</mark>
                 </p> 
                 {% endunless %}
                 {% if settings.social_show_links %}
@@ -67,13 +76,13 @@
                   <nav>
                     <ul>
                     {% for link in navigation[linkList.id].links %}
-                        <li><a href="{{ link | url }}"{% if link | url contains 'http' %} target="_blank"{% endif %}>{{ link.title }}</a></li>
+                        <li><a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title | t }}</a></li>
                     {% endfor %}                   
                     </ul>
                   </nav> 
                 {% endfor %}
                 {% endif %}
-                <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
+                <p class="">{{ 'Copyright &copy;' | t }} <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved' | t }}</p>
             </div>
         </footer>
     </body>
@@ -81,4 +90,5 @@
     {% if template == 'article' %}
         {{ 'toc.js' | script_tag }}
     {% endif %}
+    {% component 'alang.liquid' %}
 </html>
