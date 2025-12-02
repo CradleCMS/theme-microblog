@@ -26,18 +26,20 @@
             <header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
                 <div class="wrapper hamburger-menu">
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
-                    {% if site.langs.size > 1 %}
-                    <a-lang>
-                        <select name="lang" value="{{lang}}">
-                            {% for l in site.langs | keys | sort %}
-                            <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
-                            {% endfor %}
-                        </select>
-                    </a-lang>
-                    {% endif %}
-                    {% if settings.main_nav %}
-                        {% include 'navbar' %}
-                    {% endif %}
+                    <div class="flex">
+                        {% if site.langs.size > 1 %}
+                        <a-lang>
+                            <select name="lang" value="{{lang}}">
+                                {% for l in site.langs | keys | sort %}
+                                <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
+                                {% endfor %}
+                            </select>
+                        </a-lang>
+                        {% endif %}
+                        {% if settings.main_nav %}
+                            {% include 'navbar' %}
+                        {% endif %}
+                    </div>
                 </div>                   
             </header>
             {% if template == 'article' or template == 'page' %}

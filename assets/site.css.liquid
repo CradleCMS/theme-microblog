@@ -177,7 +177,7 @@ template {
     --ok-s-5: 2rem;
     --ok-s-6: 2.5rem;
     --ok-s-7: 3rem;
-    --ok-lh-body: {{ settings.color-lh-body }};
+    --ok-lh-body: {{ settings.color-lh-body | def:'1' }};
     --ok-lh-heading: 1.25;
     --ok-t-hl:  {{ settings.color-t-hl | def:'#ffcf30' }};
     --ok-accent-0: {{ settings.color-accent-0 | def:'#3e67fa' }};
@@ -1034,6 +1034,10 @@ main {
 }
 
 /* UTILITY CLASSES */
+.flex {
+    display: flex;
+    gap: var(--ok-s-2);
+}
 .text-center {
     text-align: center;    
 }
@@ -1105,11 +1109,19 @@ summary.hamburger::marker {
 #site-header details.subnav li {
     display: block;
 }
+#site-header select { 
+    margin-bottom: 0; 
+    width: 8rem;
+}
 .hamburger-menu.wrapper {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: var(--ok-s-3);
+}
+#site-header #topnav {
+    background-color: var(--ok-bg-0);   
+    border: var(--ok-b-0); 
 }
 .hamburger-menu #topnav > ul {
     position: absolute;
@@ -1127,6 +1139,10 @@ summary.hamburger::marker {
 }
 .hamburger-menu details[open] summary svg.close {
     display:block;    
+}
+.hamburger-menu svg.open {
+    display: inline-block;
+    height: 1.3rem;     
 }
 .hamburger-menu details[open] summary svg.open {
     display:none;    

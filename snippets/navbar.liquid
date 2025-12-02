@@ -1,6 +1,6 @@
 {% assign main-nav = settings.main_nav %}
 <nav class="">
-    <details id="topnav" class="nav">
+    <details id="topnav" class="nav btn">
         <summary class="hamburger">
             <svg class="open" width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
                 <g id='Menu' color='var(--ok-tc-0)'>
@@ -24,13 +24,13 @@
                     <summary>{{ link.title }}</summary>
                     <ul>
                     {% for childlink in navigation[link.handle].links %}
-                        <li><a href="{{ childlink | url }}">{{ childlink.title | t }}</a></li>
+                        <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
                     {% endfor %}                    
                     </ul>
                 </details>
             </li>
             {% else %}
-            <li><a href="{{ link | url }}">{{ link.title | t }}</a></li>
+            <li><a href="{{ link | url }}">{{ link.title }}</a></li>
             {% endif %}
         {% endfor %}
         </ul>
