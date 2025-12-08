@@ -3,7 +3,7 @@
     <div class="{{ blog.format }}">{{ blog.html }}</div>
     <hr>
 </section>
-<section class="article-list">
+<section id="main-content" class="article-list">
     {% for article in blog.articles %}
         {% include 'articleCard' %}
     {% endfor %}

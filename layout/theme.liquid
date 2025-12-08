@@ -24,6 +24,7 @@
     <body id="{{ meta.title | handle }}" class="template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         <div class="basic">
             <header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
+                <a href='#main-content' class="skip-link">{{ 'Skip to content' | t:'default' }}</a>
                 <div class="wrapper hamburger-menu">
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                     <div class="flex">
