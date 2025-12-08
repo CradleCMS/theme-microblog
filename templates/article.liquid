@@ -13,7 +13,7 @@
     </header>
     {{ article.excerpt }}
     <hr>
-    <div id="content"  class="{{ article.format }}">{{ article.html }}</div>
+    <div id="main-content"  class="{{ article.format }}">{{ article.html }}</div>
     <nav id="next-prev">
         <p class="prev">
             {% unless article.previous == empty %}
