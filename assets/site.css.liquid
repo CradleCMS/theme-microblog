@@ -1064,6 +1064,31 @@ footer {
 }
 
 /* SITE HEADER */
+.header-searchbar-box {
+    border: var(--ok-b-0);
+    border-radius: var(--ok-br);
+    padding: 0 var(--ok-s-2);
+    height: 2.5rem;
+}
+.header-search {
+    margin: 0;
+    border: none;
+    width: 10rem;
+}
+.header-search:hover:not(:disabled):not(:focus):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]) {
+    border: none;
+}
+.header-search:focus-within, .header-searchbar-box:focus-within {
+    background-color: #fff;
+    outline: none;
+    color: #000;
+}
+.search-icon {
+    height: var(--ok-s-3);
+    width: var(--ok-s-3);
+    align-self: center;
+    margin-bottom: 0;
+}
 .skip-link {
     position: absolute;
     transform: translateY(-100%);
