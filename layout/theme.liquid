@@ -26,7 +26,13 @@
             <header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
                 <a href='#main-content' class="skip-link">{{ 'Skip to content' | t:'default' }}</a>
                 <div class="wrapper hamburger-menu">
+                    {% if settings.headerUseLogo %}
+                    <a id="title" href="/">
+                        <img src="/logo.png" alt="{{ site.name }}" tabindex="0" class="logo">
+                    </a>
+                    {% else %}
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
+                    {% endif %}
                     <div class="flex">
                         <a-search class="header-searchbar-box">
                             <label class="flex">
@@ -112,4 +118,4 @@
         {{ 'toc.js' | script_tag }}
     {% endif %}
     {% component 'alang.liquid' %}
-</html> 
+</html>
