@@ -1104,12 +1104,19 @@ footer {
     transform: translateY(0%);
 }
 #title {
+    color: var(--ok-tc-0);
+    text-decoration: none;
     font-size: var(--ok-fs-3);
     margin-top: 0;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
-#title a {
+#title img, #title a {
     color: var(--ok-tc-0);
+    padding: var(--ok-s-2) 0;
+    margin-bottom: 0;
+}
+.logo {
+    height: {{ settings.logoHeight | def:"5rem" }};
 }
 header nav ul li {
     text-transform: uppercase;
