@@ -240,7 +240,21 @@
           "caption": "Logo height",
           "description": "Default logo height is 5rem",
           "key": "logoHeight",
-          "type": "text"
+          "options": [
+          {
+            "caption": "Small",
+            "value": "40px"
+          },
+          {
+            "caption": "Medium",
+            "value": "50px"
+          },
+          {
+            "caption": "Maximum",
+            "value": "60px"
+          }
+          ],
+          "type": "select"
         }
       ]
     },
