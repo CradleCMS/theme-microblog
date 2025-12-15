@@ -229,6 +229,32 @@
           "caption": "Use mega menu setting",
           "key": "header_mega",
           "type": "checkbox"
+        },
+        {
+          "caption": "Logo in header",
+          "description": "Use logo uploaded in site settings.",
+          "key": "headerUseLogo",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Logo height",
+          "description": "Default logo height is 5rem",
+          "key": "logoHeight",
+          "options": [
+          {
+            "caption": "Small",
+            "value": "40px"
+          },
+          {
+            "caption": "Medium",
+            "value": "50px"
+          },
+          {
+            "caption": "Maximum",
+            "value": "60px"
+          }
+          ],
+          "type": "select"
         }
       ]
     },
