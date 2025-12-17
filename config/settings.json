@@ -255,6 +255,12 @@
           }
           ],
           "type": "select"
+        },
+        {
+          "caption": "Searchbox in header",
+          "description": "Toggle on or off for searchbox in header",
+          "key": "headerUseSearch",
+          "type": "checkbox"
         }
       ]
     },

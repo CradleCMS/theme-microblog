@@ -34,6 +34,7 @@
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                     {% endif %}
                     <div class="flex">
+                        {% if settings.headerUseSearch %}
                         <a-search class="header-searchbar-box">
                             <label class="flex">
                                 <svg
@@ -52,6 +53,7 @@
                                 <input class="header-search" type="search" placeholder="{{ 'Search' | t:'search' }}" />
                             </label>
                         </a-search>  
+                        {% endif %}  
                         {% if site.langs.size > 1 %}
                         <a-lang>
                             <select name="lang" value="{{lang}}">
