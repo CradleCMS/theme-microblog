@@ -33,7 +33,16 @@
                     {% else %}
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                     {% endif %}
-                    <div class="flex">
+                    {% if settings.extendedNav %}
+                    <ul class="extended-nav">
+                        {% for link in navigation[settings.extendedNavList].links %}
+                        <li>
+                            <a href="{{ link | url }}">{{ link.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    <div class="flex flexbox">
                         {% if settings.headerUseSearch %}
                         <a-search class="header-searchbar-box">
                             <label class="flex">
@@ -53,7 +62,7 @@
                                 <input class="header-search" type="search" placeholder="{{ 'Search' | t:'search' }}" />
                             </label>
                         </a-search>  
-                        {% endif %}  
+                        {% endif %}
                         {% if site.langs.size > 1 %}
                         <a-lang>
                             <select name="lang" value="{{lang}}">
@@ -63,9 +72,11 @@
                             </select>
                         </a-lang>
                         {% endif %}
+                        {% unless settings.extendedNav %}
                         {% if settings.main_nav %}
                             {% include 'navbar' %}
                         {% endif %}
+                        {% endunless %}
                     </div>
                 </div>                   
             </header>
@@ -89,29 +100,37 @@
             
         </div>
         <footer>
-            <div class="wrapper">
+            <div class="wrapper footer-image-links">
+                <div>
                 {% unless settings.footer_about_shop == ""%}
                 <p>
                     <mark>{{ settings.footer_about_shop | t:'default' }}</mark>
                 </p> 
                 {% endunless %}
+                {% if settings.footerLogoImage %}
+                <img src="/logo.png" alt="{{ site.name }}" tabindex="0" class="footer-logo">
+                {% endif %}
                 {% if settings.social_show_links %}
                     <nav>
                         {% include 'socialmedia-icon-links' %}
                     </nav>
                 {% endif %}
-                {% if settings.footer_quicklinks_enable %}
-                {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
-                  <nav>
-                    <ul>
-                    {% for link in navigation[linkList.id].links %}
-                        <li><a href="{{ link.url }}"{% if link.url contains 'http' %} target="_blank"{% endif %}>{{ link.title | t }}</a></li>
-                    {% endfor %}                   
-                    </ul>
-                  </nav> 
-                {% endfor %}
-                {% endif %}
-                <p class="">{{ 'Copyright &copy;' | t }} <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved' | t }}</p>
+                </div>
+                <div class="footer-linklist-box">
+                    {% if settings.footerQuickLinksEnable %}
+                        {% for linkList in settings.footerLinkLists %}
+                        <nav class="footer-linklist">
+                            <header class="footer-linklist-title">{{ linkList.footerLinkListTitle | t:'default' }}</header>
+                            {% for link in navigation[linkList].links %}
+                            <a href="{{ link | url }}">{{ link.title }}</a>
+                            {% endfor %}
+                        </nav> 
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="wrapper">
+                <p class="footer-copyright">{{ 'Copyright &copy;' | t }} <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved' | t }}</p>
             </div>
         </footer>
     </body>

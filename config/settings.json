@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "developer": "Cradle Systems",
   "description": "Microblog Cradle theme",
+  "source": "",
+  "homepage": "",
+  "support": "",
   "sections": [
     {
       "key": "global_settings",
@@ -231,8 +234,19 @@
           "type": "checkbox"
         },
         {
+          "caption": "Use extended nav",
+          "description": "This will disable the main nav",
+          "key": "extendedNav",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Extended nav linklist",
+          "key": "extendedNavList",
+          "type": "linklist"
+        },
+        {
           "caption": "Logo in header",
-          "description": "Use logo uploaded in site settings.",
+          "description": "Use logo uploaded in site settings",
           "key": "headerUseLogo",
           "type": "checkbox"
         },
@@ -241,18 +255,18 @@
           "description": "Default logo height is 5rem",
           "key": "logoHeight",
           "options": [
-          {
-            "caption": "Small",
-            "value": "40px"
-          },
-          {
-            "caption": "Medium",
-            "value": "50px"
-          },
-          {
-            "caption": "Maximum",
-            "value": "60px"
-          }
+            {
+              "caption": "Small",
+              "value": "40px"
+            },
+            {
+              "caption": "Medium",
+              "value": "50px"
+            },
+            {
+              "caption": "Maximum",
+              "value": "60px"
+            }
           ],
           "type": "select"
         },
@@ -500,6 +514,36 @@
           "key": "footer_about_shop",
           "rows": "6",
           "type": "textarea"
+        },
+        {
+          "caption": "Use logo in footer",
+          "key": "footerLogoImage",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Show footer links",
+          "default": true,
+          "key": "footerQuickLinksEnable",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Select footer linklists",
+          "description": "Create link-lists under Navigation",
+          "key": "footerLinkLists",
+          "settings": [
+            {
+              "caption": "Title",
+              "key": "footerLinkListTitle",
+              "type": "text"
+            },
+            {
+              "caption": "Footer link list",
+              "default": "footer",
+              "key": "footerLinkList",
+              "type": "linklist"
+            }
+          ],
+          "type": "struct"
         }
       ]
     },

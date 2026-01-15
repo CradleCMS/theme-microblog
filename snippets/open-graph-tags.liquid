@@ -1,18 +1,18 @@
 {% if template contains 'product' %}
     <meta property="og:type" content="product.item" />
-    <meta property="og:image" content="{% if product.featuredImage.src.size > 0 %}{{site | url}}{{ product.featuredImage.src | product_img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
+    <meta property="og:image" content="{% if product.featuredImage.src.size > 0 %}{{ product.featuredImage.src | product_img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% elseif template contains 'collection' %}
     <meta property="og:type" content="product.group" />
-    <meta property="og:image" content="{% if collection.image.src.size > 0 %}{{site | url}}{{ collection | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
+    <meta property="og:image" content="{% if collection.image.src.size > 0 %}{{ collection | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% elseif template contains 'article' %}
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="{% if article.image.src.size > 0 %}{{site | url}}{{ article | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
+    <meta property="og:image" content="{% if article.image.src.size > 0 %}{{ article | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% elseif template contains 'blog' %}
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{% if blog.image.src.size > 0 %}{{site | url}}{{ blog | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
+    <meta property="og:image" content="{% if blog.image.src.size > 0 %}{{ blog | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% elseif template contains 'page' %}
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="{% if page.image.src.size > 0 %}{{site | url}}{{ page | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
+    <meta property="og:image" content="{% if page.image.src.size > 0 %}{{ page | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% else %}
     <meta property="og:image" content="{{ site | url }}/cover-full" />
     <meta property="og:type" content="website" />
