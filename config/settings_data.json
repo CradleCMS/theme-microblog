@@ -7,6 +7,8 @@
       "closed_fgimage_size": "150",
       "closed_text": "We are closed for the moment, check in later!",
       "closed_title": "We are closed",
+      "footerLogoImage": true,
+      "footerQuickLinksEnable": false,
       "footer_about_shop": "This is a blog! For the internets!",
       "homepage_blog_enabled": false,
       "homepage_page_show": false,

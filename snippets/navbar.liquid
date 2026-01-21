@@ -16,7 +16,7 @@
                 </g>
             </svg>
         </summary>
-        <ul {% if settings.header_mega %}class="mega-menu"{% endif %}>
+        <ul {% if settings.navStyle == "header_mega" %}class="mega-menu"{% endif %}>
         {% for link in navigation[main-nav].links %}
             {% if link.type == 'navigation' %}
              <li>

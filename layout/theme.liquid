@@ -33,9 +33,9 @@
                     {% else %}
                     <h1 id="title"><a href="/">{{ site.name }}</a></h1>
                     {% endif %}
-                    {% if settings.extendedNav %}
+                    {% if settings.navStyle == "extendedNav" %}
                     <ul class="extended-nav">
-                        {% for link in navigation[settings.extendedNavList].links %}
+                        {% for link in navigation[settings.main_nav].links %}
                         <li>
                             <a href="{{ link | url }}">{{ link.title }}</a>
                         </li>
@@ -72,7 +72,7 @@
                             </select>
                         </a-lang>
                         {% endif %}
-                        {% unless settings.extendedNav %}
+                        {% unless settings.navStyle == "extendedNav" %}
                         {% if settings.main_nav %}
                             {% include 'navbar' %}
                         {% endif %}

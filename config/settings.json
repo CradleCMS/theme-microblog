@@ -197,7 +197,8 @@
           "key": "color-d-tc-code",
           "type": "color"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "header",
@@ -229,20 +230,23 @@
           "type": "linklist"
         },
         {
-          "caption": "Use mega menu setting",
-          "key": "header_mega",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Use extended nav",
-          "description": "This will disable the main nav",
-          "key": "extendedNav",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Extended nav linklist",
-          "key": "extendedNavList",
-          "type": "linklist"
+          "caption": "Select nav style",
+          "key": "navStyle",
+          "options": [
+            {
+              "caption": "Default",
+              "value": ""
+            },
+            {
+              "caption": "Mega menu",
+              "value": "header_mega"
+            },
+            {
+              "caption": "Extended nav",
+              "value": "extendedNav"
+            }
+          ],
+          "type": "select"
         },
         {
           "caption": "Logo in header",
@@ -354,18 +358,14 @@
           "options": [
             {
               "caption": "None",
-              "value": ""
+              "value": "bg-0"
             },
             {
               "caption": "Default",
-              "value": " bg-0"
-            },
-            {
-              "caption": "Darker base color",
               "value": " bg-1"
             },
             {
-              "caption": "Darkest base color",
+              "caption": "Darker base color",
               "value": " bg-2"
             }
           ],
@@ -502,7 +502,8 @@
           "key": "homepage_blog",
           "type": "blog"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "footer",
