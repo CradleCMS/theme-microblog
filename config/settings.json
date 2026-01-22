@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "developer": "Cradle Systems",
   "description": "Microblog Cradle theme",
+  "source": "",
+  "homepage": "",
+  "support": "",
   "sections": [
     {
       "key": "global_settings",
@@ -194,7 +197,8 @@
           "key": "color-d-tc-code",
           "type": "color"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "header",
@@ -226,13 +230,27 @@
           "type": "linklist"
         },
         {
-          "caption": "Use mega menu setting",
-          "key": "header_mega",
-          "type": "checkbox"
+          "caption": "Select nav style",
+          "key": "navStyle",
+          "options": [
+            {
+              "caption": "Default",
+              "value": ""
+            },
+            {
+              "caption": "Mega menu",
+              "value": "header_mega"
+            },
+            {
+              "caption": "Extended nav",
+              "value": "extendedNav"
+            }
+          ],
+          "type": "select"
         },
         {
           "caption": "Logo in header",
-          "description": "Use logo uploaded in site settings.",
+          "description": "Use logo uploaded in site settings",
           "key": "headerUseLogo",
           "type": "checkbox"
         },
@@ -241,20 +259,26 @@
           "description": "Default logo height is 5rem",
           "key": "logoHeight",
           "options": [
-          {
-            "caption": "Small",
-            "value": "40px"
-          },
-          {
-            "caption": "Medium",
-            "value": "50px"
-          },
-          {
-            "caption": "Maximum",
-            "value": "60px"
-          }
+            {
+              "caption": "Small",
+              "value": "40px"
+            },
+            {
+              "caption": "Medium",
+              "value": "50px"
+            },
+            {
+              "caption": "Maximum",
+              "value": "60px"
+            }
           ],
           "type": "select"
+        },
+        {
+          "caption": "Searchbox in header",
+          "description": "Toggle on or off for searchbox in header",
+          "key": "headerUseSearch",
+          "type": "checkbox"
         }
       ]
     },
@@ -334,18 +358,14 @@
           "options": [
             {
               "caption": "None",
-              "value": ""
+              "value": "bg-0"
             },
             {
               "caption": "Default",
-              "value": " bg-0"
-            },
-            {
-              "caption": "Darker base color",
               "value": " bg-1"
             },
             {
-              "caption": "Darkest base color",
+              "caption": "Darker base color",
               "value": " bg-2"
             }
           ],
@@ -482,7 +502,8 @@
           "key": "homepage_blog",
           "type": "blog"
         }
-      ]
+      ],
+      "default": null
     },
     {
       "key": "footer",
@@ -494,6 +515,36 @@
           "key": "footer_about_shop",
           "rows": "6",
           "type": "textarea"
+        },
+        {
+          "caption": "Use logo in footer",
+          "key": "footerLogoImage",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Show footer links",
+          "default": true,
+          "key": "footerQuickLinksEnable",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Select footer linklists",
+          "description": "Create link-lists under Navigation",
+          "key": "footerLinkLists",
+          "settings": [
+            {
+              "caption": "Title",
+              "key": "footerLinkListTitle",
+              "type": "text"
+            },
+            {
+              "caption": "Footer link list",
+              "default": "footer",
+              "key": "footerLinkList",
+              "type": "linklist"
+            }
+          ],
+          "type": "struct"
         }
       ]
     },

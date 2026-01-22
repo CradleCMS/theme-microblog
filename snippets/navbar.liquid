@@ -1,5 +1,5 @@
 {% assign main-nav = settings.main_nav %}
-<nav class="">
+<nav class="header-nav">
     <details id="topnav" class="nav btn">
         <summary class="hamburger">
             <svg class="open" width='24px' height='24px' viewBox='0 0 24 24' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -16,7 +16,7 @@
                 </g>
             </svg>
         </summary>
-        <ul {% if settings.header_mega %}class="mega-menu"{% endif %}>
+        <ul {% if settings.navStyle == "header_mega" %}class="mega-menu"{% endif %}>
         {% for link in navigation[main-nav].links %}
             {% if link.type == 'navigation' %}
              <li>
