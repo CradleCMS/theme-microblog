@@ -14,7 +14,7 @@ window.onresize = resetMql;
 
 window.addEventListener('DOMContentLoaded', function (event) { // Let the DOM content load before running the script.
 //Get all headings only from the actual contents.
-var contentContainer = document.getElementById('content'); // Add this div to the html
+var contentContainer = document.getElementById('main-content'); // Add this div to the html
 var headings = contentContainer.querySelectorAll('h1,h2,h3,h4'); // You can do as many or as few headings as you need.
 
 var tocContainer = document.getElementById('toc'); // Add this div to the HTML

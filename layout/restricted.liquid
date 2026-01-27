@@ -19,11 +19,11 @@
         <link rel="stylesheet" type="text/css" href="{{ 'site.css.liquid' | asset_url }}">
         {{ settings.head_extra_code }}
     </head>
-    <body id="{{ meta.title | handle }}">
+    <body id="{{ meta.title | handle }}" style="background-image: url('{{ settings.closed_bgimage | asset_img_url: settings.closed_bgimage_size,'0' }}'); background-position: center;">
         <main>
             <div class="message">
                   {% if settings.closed_fgimage_use %}
-                    <img src="{{ 'closed-fg.png' | asset_img_url: settings.closed_fgimage_size,'0' }}">
+                    <img src="{{ settings.closed_fgimage | asset_img_url: settings.closed_fgimage_size,'0' }}">
                   {% endif %}
                   {% if settings.closed_title %}
                     <h1>{{ settings.closed_title | t:'default' }}</h1>
