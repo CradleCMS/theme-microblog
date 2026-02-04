@@ -1584,7 +1584,6 @@ summary.hamburger::marker {
 .article-post img {
     margin: 0;   
     max-width: none;
-    max-height: 200px;
 }
 .article-img-box {
     align-self: end;
@@ -1615,6 +1614,11 @@ aside {
     #toc-details a {
         padding: 0.25rem;
         display: inline-block;
+    }
+}
+@media (max-width: 700px) {
+    .article-img-box {
+        align-self: center;
     }
 }
 @media (width >= 160ch) {
