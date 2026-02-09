@@ -1192,13 +1192,11 @@ summary.hamburger::marker {
     gap: var(--ok-s-3);
 }
 #site-header #topnav {
-    background-color: var(--ok-bg-0);   
     border: var(--ok-b-0); 
 }
 .hamburger-menu #topnav > ul {
     position: absolute;
     right: var(--ok-s-2);
-    background-color: var(--ok-bg-0);
     padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
     border: var(--ok-b-0);
     border-radius: var(--ok-br);
@@ -1312,11 +1310,14 @@ summary.hamburger::marker {
 }
 .footer-linklist-box {
     display: flex;
+    width: 600px;
+    flex-wrap: wrap;
 }
 .footer-linklist {
     display: flex;
     flex-direction: column;
     padding: 0 var(--ok-s-5);
+    width: 200px;
 }
 .footer-linklist a {
     color: var(--ok-tc-1);
@@ -1584,7 +1585,6 @@ summary.hamburger::marker {
 .article-post img {
     margin: 0;   
     max-width: none;
-    max-height: 200px;
 }
 .article-img-box {
     align-self: end;
@@ -1615,6 +1615,11 @@ aside {
     #toc-details a {
         padding: 0.25rem;
         display: inline-block;
+    }
+}
+@media (max-width: 700px) {
+    .article-img-box {
+        align-self: center;
     }
 }
 @media (width >= 160ch) {

@@ -1,7 +1,7 @@
 {% if settings.indexBanner.size > 0 %}
     {% for banners in settings.indexBanner %}
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-        <section class="index-banner index-{{ forloop.index }} lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %}" style="background-color:{{ banners.bannerBgColor }};">
+        <section class="index-banner index-{{ forloop.index }} flex-row{% if thecycle == 'odd' %}-reverse{% endif %}" style="background-color:{{ banners.bannerBgColor }};">
             {% if banners.bannerTitle or banners.bannerText or banners.bannerUrl or banners.banner2Url %}
               <div class="banner-content text-center">
                 {% if banners.bannerTitle %}

@@ -1,0 +1,57 @@
+<header id="site-header" class="{{ settings.headerBg | def:'bg-0' }}">
+    <a href='#main-content' class="skip-link">{{ 'Skip to content' | t:'default' }}</a>
+    <div class="wrapper hamburger-menu">
+        {% if settings.headerUseLogo %}
+        <a id="title" href="/">
+            <img src="/logo.png" alt="{{ site.name }}" tabindex="0" class="logo">
+        </a>
+        {% else %}
+        <h1 id="title"><a href="/">{{ site.name }}</a></h1>
+        {% endif %}
+        {% if settings.navStyle == "extendedNav" %}
+        <ul class="extended-nav">
+            {% for link in navigation[settings.main_nav].links %}
+            <li>
+                <a href="{{ link | url }}">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="flex flexbox">
+            {% if settings.headerUseSearch %}
+            <a-search class="header-searchbar-box">
+                <label class="flex">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="search-icon"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                        <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                        </path>
+                    </svg>
+                    <input class="header-search {{ settings.headerBg | def:'bg-0'}}" type="search" placeholder="{{ 'Search' | t:'search' }}" />
+                </label>
+            </a-search>
+            {% endif %}
+            {% if site.langs.size > 1 %}
+            <a-lang>
+                <select class="{{ settings.headerBg | def:'bg-0'}}" name="lang" value="{{lang}}">
+                    {% for l in site.langs | keys | sort %}
+                    <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
+                    {% endfor %}
+                </select>
+            </a-lang>
+            {% endif %}
+            {% unless settings.navStyle == "extendedNav" %}
+                {% if settings.main_nav %}
+                    {% include 'navbar' %}
+                {% endif %}
+            {% endunless %}
+        </div>
+    </div>                   
+</header>

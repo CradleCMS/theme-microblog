@@ -1,4 +1,5 @@
 <section class="search-page">
+    <h1>Search Page</h1>
     {% form 'search' class:'search' %}
         <input type="hidden" name="filter" value="title">
         <input type="hidden" name="sorting" value="published-desc">
@@ -17,27 +18,27 @@
 
     {% if search %}
     {% if search.totalCount == 0 %}
-	<h4>{{ 'Your search for "%s" did not yield any results.' | t:'default' | insert:search.terms }}</h4>
+	<h2>{{ 'Your search for "%s" did not yield any results.' | t:'default' | insert:search.terms }}</h2>
     {% else %}
-    <h4>{{ 'Found %s ' | t:'default' | insert:search.totalCount }}{{ search.totalCount | pluralize:'item','items'}}</h4>
+    <h2>{{ 'Found %s ' | t:'default' | insert:search.totalCount }}{{ search.totalCount | pluralize:'item','items'}}</h2>
     {% endif %}
 
 	{% if search.products %}
-	<h4>{{ 'Products' | t:'default' }} ({{search.products.size}})</h4>
+	<h3>{{ 'Products' | t:'default' }} ({{search.products.size}})</h3>
 	{% for product in search.products limit:12 %}
 	    <a href="{{ product | url }}">{{product.title}}</a>
     {% endfor %}
     {% endif %}
 	
 	{% if search.pages %}
-	<h4>{{ 'Pages' | t:'deafult' }} ({{search.pages.size}})</h4>
+	<h3>{{ 'Pages' | t:'deafult' }} ({{search.pages.size}})</h3>
 	{% for page in search.pages limit:12 %}
 	    <a href="{{ page | url }}">{{page.title}}</a>
     {% endfor %}
     {% endif %}
     
 	{% if search.articles %}
-    <h4>{{ 'Articles' | t:'default' }} ({{search.articles.size}})</h4>
+    <h3>{{ 'Articles' | t:'default' }} ({{search.articles.size}})</h3>
 	{% for article in search.articles limit:12 %}
 	    <a href="{{ article | url }}">{{ article.title }}</a>
     {% endfor %}
