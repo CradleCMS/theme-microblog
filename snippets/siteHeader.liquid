@@ -8,16 +8,16 @@
         {% else %}
         <h1 id="title"><a href="/">{{ site.name }}</a></h1>
         {% endif %}
-        {% if settings.navStyle == "extendedNav" %}
-        <ul class="extended-nav">
-            {% for link in navigation[settings.main_nav].links %}
-            <li>
-                <a href="{{ link | url }}">{{ link.title }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        <div class="flex flexbox">
+        <div class="nav-flexbox">
+            {% if settings.navStyle == "extendedNav" %}
+            <ul class="extended-nav">
+                {% for link in navigation[settings.main_nav].links %}
+                <li>
+                    <a href="{{ link | url }}">{{ link.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% if settings.headerUseSearch %}
             <a-search class="header-searchbar-box">
                 <label class="flex">
@@ -38,20 +38,22 @@
                 </label>
             </a-search>
             {% endif %}
-            {% if site.langs.size > 1 %}
-            <a-lang>
-                <select class="{{ settings.headerBg | def:'bg-0'}}" name="lang" value="{{lang}}">
-                    {% for l in site.langs | keys | sort %}
-                    <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
-                    {% endfor %}
-                </select>
-            </a-lang>
-            {% endif %}
-            {% unless settings.navStyle == "extendedNav" %}
+            <div id="language-menu-box">
+                {% if site.langs.size > 1 %}
+                <a-lang id="language-box">
+                    <select class="{{ settings.headerBg | def:'bg-0'}}" name="lang" value="{{lang}}">
+                        {% for l in site.langs | keys | sort %}
+                        <option value="{{ l }}" {% if l == lang %}selected{% endif %}>{{languages[l] | t:'default' }}</option>
+                        {% endfor %}
+                    </select>
+                </a-lang>
+                {% endif %}
+                {% unless settings.navStyle == "extendedNav" %}
                 {% if settings.main_nav %}
                     {% include 'navbar' %}
                 {% endif %}
-            {% endunless %}
+                {% endunless %}
+            </div>
         </div>
     </div>                   
 </header>

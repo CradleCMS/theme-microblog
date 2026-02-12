@@ -1073,6 +1073,12 @@ footer {
 }
 
 /* SITE HEADER */
+.nav-flexbox { 
+    display: flex;
+    width: 100%;
+    gap: var(--ok-s-2);
+    justify-content: end;
+}
 .extended-nav {
     display: flex;
     flex-direction: row;
@@ -1082,6 +1088,7 @@ footer {
     padding: 0;
     overflow: auto;
     white-space: nowrap;
+    align-items: center;
 }
 .extended-nav li {
     margin: 0 var(--ok-s-2);
@@ -1181,7 +1188,8 @@ summary.hamburger::marker {
 #site-header details.subnav li {
     display: block;
 }
-#site-header select { 
+#site-header select {
+    margin-right: var(--ok-s-2);
     margin-bottom: 0; 
     width: 8rem;
 }
@@ -1241,6 +1249,10 @@ summary.hamburger::marker {
 .hamburger svg {
     margin: 0;    
 }
+#language-menu-box {
+    display: flex;
+    justify-content: space-between;
+}
 @media (max-width: 1000px) {
     .hamburger-menu .mega-menu {
         display: block;
@@ -1248,7 +1260,6 @@ summary.hamburger::marker {
     #site-header #topnav > ul {
         position: absolute;
         right: var(--ok-s-1);
-        background-color: var(--ok-bg-0);
         padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
         border: var(--ok-b-0);
         border-radius: var(--ok-br);
@@ -1281,10 +1292,13 @@ summary.hamburger::marker {
         right: var(--ok-s-5);
         max-width: 80vw;
     }
-    .flexbox, .header-nav {
+    .nav-flexbox {
         flex-direction: column;
     }
-    #title, .extended-nav {
+    #title {
+        position: absolute;
+    }
+    .extended-nav {
         width: 100%;
     }
     .extended-nav {
@@ -1295,8 +1309,9 @@ summary.hamburger::marker {
         margin: 0;
         padding-right: var(--ok-s-3);
     }
-    .header-searchbar-box {
-        width: 100%;
+    #language-menu-box {
+        order: -1;
+        justify-content: end;
     }
 }
 /* SITE HEADER ENDS */
