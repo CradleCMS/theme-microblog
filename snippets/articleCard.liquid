@@ -11,7 +11,9 @@
         			<p>{{ article.html | strip_html | truncatewords: 20 }}</p>
         		{% endif %}	
             </div>   
-            <img src="{{ article | img_url:150,0 }}" alt="{{ article.image.alt }}" />
+            <div class="article-img-box">
+                <img src="{{ article | img_url: 150, 0 }}" alt="{{ article.image.alt }}" />
+            </div>
         </div>
     </a>
 </div>

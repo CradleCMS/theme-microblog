@@ -1044,6 +1044,9 @@ main {
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
+.glass-effect {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 .text-center {
     text-align: center;    
 }
@@ -1070,6 +1073,12 @@ footer {
 }
 
 /* SITE HEADER */
+.nav-flexbox { 
+    display: flex;
+    width: 100%;
+    gap: var(--ok-s-2);
+    justify-content: end;
+}
 .extended-nav {
     display: flex;
     flex-direction: row;
@@ -1079,6 +1088,7 @@ footer {
     padding: 0;
     overflow: auto;
     white-space: nowrap;
+    align-items: center;
 }
 .extended-nav li {
     margin: 0 var(--ok-s-2);
@@ -1178,7 +1188,8 @@ summary.hamburger::marker {
 #site-header details.subnav li {
     display: block;
 }
-#site-header select { 
+#site-header select {
+    margin-right: var(--ok-s-2);
     margin-bottom: 0; 
     width: 8rem;
 }
@@ -1189,13 +1200,11 @@ summary.hamburger::marker {
     gap: var(--ok-s-3);
 }
 #site-header #topnav {
-    background-color: var(--ok-bg-0);   
     border: var(--ok-b-0); 
 }
 .hamburger-menu #topnav > ul {
     position: absolute;
     right: var(--ok-s-2);
-    background-color: var(--ok-bg-0);
     padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
     border: var(--ok-b-0);
     border-radius: var(--ok-br);
@@ -1240,6 +1249,10 @@ summary.hamburger::marker {
 .hamburger svg {
     margin: 0;    
 }
+#language-menu-box {
+    display: flex;
+    justify-content: space-between;
+}
 @media (max-width: 1000px) {
     .hamburger-menu .mega-menu {
         display: block;
@@ -1247,7 +1260,6 @@ summary.hamburger::marker {
     #site-header #topnav > ul {
         position: absolute;
         right: var(--ok-s-1);
-        background-color: var(--ok-bg-0);
         padding: var(--ok-s-2) var(--ok-s-3) var(--ok-s-3) var(--ok-s-3);
         border: var(--ok-b-0);
         border-radius: var(--ok-br);
@@ -1280,10 +1292,13 @@ summary.hamburger::marker {
         right: var(--ok-s-5);
         max-width: 80vw;
     }
-    .flexbox, .header-nav {
+    .nav-flexbox {
         flex-direction: column;
     }
-    #title, .extended-nav {
+    #title {
+        position: absolute;
+    }
+    .extended-nav {
         width: 100%;
     }
     .extended-nav {
@@ -1294,8 +1309,9 @@ summary.hamburger::marker {
         margin: 0;
         padding-right: var(--ok-s-3);
     }
-    .header-searchbar-box {
-        width: 100%;
+    #language-menu-box {
+        order: -1;
+        justify-content: end;
     }
 }
 /* SITE HEADER ENDS */
@@ -1309,11 +1325,14 @@ summary.hamburger::marker {
 }
 .footer-linklist-box {
     display: flex;
+    width: 600px;
+    flex-wrap: wrap;
 }
 .footer-linklist {
     display: flex;
     flex-direction: column;
     padding: 0 var(--ok-s-5);
+    width: 200px;
 }
 .footer-linklist a {
     color: var(--ok-tc-1);
@@ -1580,7 +1599,10 @@ summary.hamburger::marker {
 }
 .article-post img {
     margin: 0;   
-    flex-grow: 0;
+    max-width: none;
+}
+.article-img-box {
+    align-self: end;
 }
 aside {
     padding: var(--ok-s-3);
@@ -1610,6 +1632,11 @@ aside {
         display: inline-block;
     }
 }
+@media (max-width: 700px) {
+    .article-img-box {
+        align-self: center;
+    }
+}
 @media (width >= 160ch) {
     aside {
         position: absolute;
@@ -1633,18 +1660,11 @@ aside {
       list-style: none;
     }
 }
-@media (max-width: 600px) {
-    .article-post img {
-        max-width: 5rem;
-    }
-}
 .footnotes ol {
     padding-left: var(--ok-s-5);
     color: var(--ok-tc-1);     
     font-family: monospace;
 }
-
-
 .sidenav ul {
     margin-bottom: 0;    
 }
@@ -1657,7 +1677,6 @@ aside {
 .sidenav li {
         
 }
-
 #next-prev {
   display: flex;
   justify-content: space-between;
@@ -1698,7 +1717,40 @@ html#restricted {
     background-size: cover;
 }
 {% endif %}
-
+/* CLosed site ENDS */
+/* Search Template */
+.search {
+    width: auto;
+    max-width: none;
+}
+.search-page {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.search-page h4 {
+    margin: var(--ok-s-3) 0;
+}
+.search-box {
+    display: flex;
+    width: fit-content;
+}
+.search-box input, .search-box button, .search-box select{
+    margin: var(--ok-s-5) var(--ok-s-4) 0  0;
+}
+.search-box select, .search-box input {
+    max-width: 250px;
+}
+@media (max-width: 700px) {
+    .search-box {
+        flex-flow: column;
+    }
+    .search-box select, .search-box input, .search-box button {
+        max-width: none;
+        margin-right: 0;
+    }
+}
+/* Search Template ENDS */
 /* RTE styles */
 .RTE [data-block=layout] {
     display: flex;

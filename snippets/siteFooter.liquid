@@ -1,0 +1,34 @@
+<footer>
+    <div class="wrapper footer-image-links">
+        <div>
+            {% unless settings.footer_about_shop == ""%}
+            <p>
+                <mark>{{ settings.footer_about_shop | t:'default' }}</mark>
+            </p> 
+            {% endunless %}
+            {% if settings.footerLogoImage %}
+            <img src="/logo.png" alt="{{ site.name }}" tabindex="0" class="footer-logo">
+            {% endif %}
+            {% if settings.social_show_links %}
+            <nav>
+                {% include 'socialmedia-icon-links' %}
+            </nav>
+            {% endif %}
+        </div>
+        <div class="footer-linklist-box">
+            {% if settings.footerQuickLinksEnable %}
+               {% for linkList in settings.footerLinkLists %}
+                <nav class="footer-linklist">
+                     <header class="footer-linklist-title">{{ linkList.footerLinkListTitle | t:'default' }}</header>
+                     {% for link in navigation[linkList].links %}
+                     <a href="{{ link | url }}">{{ link.title }}</a>
+                     {% endfor %}
+                </nav>
+               {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="wrapper">
+        <p class="footer-copyright">{{ 'Copyright &copy;' | t }} <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved' | t }}</p>
+    </div>
+</footer>

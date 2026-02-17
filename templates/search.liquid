@@ -1,0 +1,47 @@
+<section class="search-page">
+    <h1>Search Page</h1>
+    {% form 'search' class:'search' %}
+        <input type="hidden" name="filter" value="title">
+        <input type="hidden" name="sorting" value="published-desc">
+    <div class="search-box">
+        <input type="search" onfocus="this.select();" name="q" value="{{ search.terms }}" autocomplete="off" placeholder="{{ 'Search' | t:'default' }}" />
+        <select name="include" value="{{search.include}}">
+            <option disabled>{{ 'Filter' | t:'default' }}</option>
+            <option value="pages,articles,products" {% if search.include == 'pages,articles,products' %}selected{% endif %}>{{ 'All' | t:'default' }}</option>
+            <option value="products" {% if search.include == 'products' %}selected{% endif %}>{{ 'Products' | t:'default' }}</option>
+            <option value="articles" {% if search.include == 'articles' %}selected{% endif %}>{{ 'Articles' | t:'default' }}</option>
+            <option value="pages" {% if search.include == 'pages' %}selected{% endif %}>{{ 'Pages' | t:'default' }}</option>
+        </select>
+        <button type="submit">{{ 'Search' | t:'default' }}</button>
+    </div>
+    {% endform %}
+
+    {% if search %}
+    {% if search.totalCount == 0 %}
+	<h2>{{ 'Your search for "%s" did not yield any results.' | t:'default' | insert:search.terms }}</h2>
+    {% else %}
+    <h2>{{ 'Found %s ' | t:'default' | insert:search.totalCount }}{{ search.totalCount | pluralize:'item','items'}}</h2>
+    {% endif %}
+
+	{% if search.products %}
+	<h3>{{ 'Products' | t:'default' }} ({{search.products.size}})</h3>
+	{% for product in search.products limit:12 %}
+	    <a href="{{ product | url }}">{{product.title}}</a>
+    {% endfor %}
+    {% endif %}
+	
+	{% if search.pages %}
+	<h3>{{ 'Pages' | t:'deafult' }} ({{search.pages.size}})</h3>
+	{% for page in search.pages limit:12 %}
+	    <a href="{{ page | url }}">{{page.title}}</a>
+    {% endfor %}
+    {% endif %}
+    
+	{% if search.articles %}
+    <h3>{{ 'Articles' | t:'default' }} ({{search.articles.size}})</h3>
+	{% for article in search.articles limit:12 %}
+	    <a href="{{ article | url }}">{{ article.title }}</a>
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+</section>

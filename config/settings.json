@@ -367,6 +367,10 @@
             {
               "caption": "Darker base color",
               "value": " bg-2"
+            },
+            {
+              "caption": "Glass effect base",
+              "value": " glass-effect"
             }
           ],
           "type": "select"
